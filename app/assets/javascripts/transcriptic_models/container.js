@@ -1,16 +1,16 @@
-var Container = function(containerName, containerType, storage, containerID) {
+Transcriptic.Container = function(containerName, containerType, storage, containerID) {
   this.containerName = containerName;
   this.containerType = containerType;
   this.containerDimensions = this.getContainerDimensions(this.containerType);
   this.storage = storage;
   this.containerID = containerID;
+  this.wells = [];
 
   this.generateWells();
 };
 
-Container.prototype = {
+Transcriptic.Container.prototype = {
   generateWells: function() {
-    this.wells = []
     var wellVolume = this.getWellVolume(this.containerType);
     var numWells = this.containerDimensions[0] * this.containerDimensions[1];
     for(var index = 0; index < numWells; index++) {

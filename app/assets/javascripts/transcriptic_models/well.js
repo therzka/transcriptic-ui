@@ -1,9 +1,9 @@
-var Well = function(container, wellIndex, volume) {
+Transcriptic.Well = function(container, wellIndex, volume) {
   this.container = container;
   this.wellIndex = wellIndex;
   this.volume = volume;
 };
 
-Well.prototype = {
+Transcriptic.Well.prototype = {
   
 };

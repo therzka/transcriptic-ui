@@ -1,11 +1,11 @@
-var Organization = function(organizationID, organizationName) {
+Transcriptic.Organization = function(organizationID, organizationName) {
   this.organizationID = organizationID;
   this.organizationName = organizationName;
   this.containers = [];
   this.projects = [];
 };
 
-Organization.prototype = {
+Transcriptic.Organization.prototype = {
   addContainer: function(container) {
     this.containers.push(container);
   },

@@ -1,10 +1,10 @@
-var TranscripticRun = function(projectID, projectName) {
+Transcriptic.Run = function(projectID, projectName) {
   this.projectName = projectName;
-  this.projectID = projectID || "SOME PROJECT ID";
+  this.projectID = projectID || "PROJECT ID";
   this.instructions = [];
 };
 
-TranscripticRun.prototype = {
+Transcriptic.Run.prototype = {
   addInstruction: function(instruction) {
     this.instructions.push(instruction);
   }
