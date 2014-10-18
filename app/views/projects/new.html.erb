@@ -1,0 +1,6 @@
+<h2>New Project</h2>
+
+<%= bootstrap_form_for(@project) do |f| %>
+  <%= f.text_field :project_id, label: "Project ID" %>
+  <%= f.submit "Create" %>
+<% end %>
