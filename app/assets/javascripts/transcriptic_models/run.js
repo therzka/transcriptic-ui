@@ -1,6 +1,5 @@
-Transcriptic.Run = function(projectID, projectName) {
-  this.projectName = projectName;
-  this.projectID = projectID || "PROJECT ID";
+Transcriptic.Run = function(title) {
+  this.title = title || "My Run";
   this.instructions = [];
 };
 
