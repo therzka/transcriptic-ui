@@ -1,5 +1,5 @@
 <%= bootstrap_form_tag html: { id: "instruction_form" } do |f| %>
-  <%= f.select :container, [], id: "container", label: "Container" %>
+  <%= f.select :container, [], {}, label: "Container", id: "containers_selector" %>
   <%= f.select :instruction_type, ["distribute", "transfer"], label: "Type" %>
   <%= f.submit %>
 <% end %>
