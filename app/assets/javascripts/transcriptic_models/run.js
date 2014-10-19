@@ -12,21 +12,21 @@ Transcriptic.Run.prototype = {
 
     for (var i in this.instructions){
       instructiontype = this.instructions[i].instructionType;
-      actions = this.instructions[i].actions
-      instructionlist = finalObj["instructions"]
+      actions = this.instructions[i].actions;
+      instructionlist = finalObj["instructions"];
       instructionlist.push({
       	op: instructiontype,
       	groups: []
       })
- 		for (var ins in instructionlist){
-	      if (finalObj["instructions"][ins]["op"] == instructiontype){	
-	      	for (var a in actions){
-	      		act = actions[a].encodeAction()
-	      		finalObj["instructions"][ins]["groups"].push(act)
-	      		}
-	  		}
- 		}
-  	}
+      for (var ins in instructionlist) {
+        if (finalObj["instructions"][ins]["op"] == instructiontype) {	
+          for (var a in actions) {
+            act = actions[a].encodeAction();
+            finalObj["instructions"][ins]["groups"].push(act);
+          }
+        }
+      }
+    }
     return JSON.stringify(finalObj, null, '\t')
   }
 };

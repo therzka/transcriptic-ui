@@ -1,4 +1,5 @@
 var Transcriptic = {};
+Transcriptic.Instruction = {};
 
 $(document).ready(function() {
   new Transcriptic.OrganizationInitializer();
