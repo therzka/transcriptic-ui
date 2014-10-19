@@ -11,28 +11,13 @@ Transcriptic.Run.prototype = {
     finalObj = {instructions:[]};
 
     for (var i in this.instructions){
-      containername = this.instructions[c].containerName;
-      containertype = this.instructions[c].containerType;
-      storage = this.instructions[c].storage;
-      containerid = this.instructions[c].containerID;
-
-      if (containerid == "new"){
-        finalObj["refs"][containername] = {
-            new: containertype,
-            store: {
-              where: storage
-            }
-        }
-      }
-      else{
-        finalObj["refs"][containername] = {
-          id: containerid,
-          store: {
-              where: storage
-          }
-        }
-      }
-    }
+      instructiontype = this.instructions[c].instructionType;
+      actions = this.instructions[c].actions
+      finalObj["instructions"].push({
+      	op: instuctiontype,
+      	groups: []
+      })
+  	}
     return JSON.stringify(finalObj, null, '\t')
   }
 };
