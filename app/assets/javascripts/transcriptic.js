@@ -3,6 +3,6 @@ Transcriptic.Instruction = {};
 
 $(document).ready(function() {
   new Transcriptic.OrganizationInitializer();
-  new Transcriptic.ContainerFormWidget("button#new_container", "#container_form", "#container_list");
-  new Transcriptic.InstructionFormWidget("button#new_instruction", "#instruction_form", "#instruction_list");
+  new Transcriptic.ContainerFormWidget();
+  new Transcriptic.InstructionFormWidget();
 });

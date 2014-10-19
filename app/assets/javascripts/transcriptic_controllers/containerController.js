@@ -1,6 +1,6 @@
 Transcriptic.ContainerController = function(containerForm, containerList) {
-  this.containerForm = containerForm;
-  this.containerList = containerList;
+  this.containerForm = new Transcriptic.ContainerForm();
+  this.containerList = new Transcriptic.ContainerList();
   this.containerForm.bindEventListeners(this);
 };
 

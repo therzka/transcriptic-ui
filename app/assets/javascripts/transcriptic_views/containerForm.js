@@ -1,13 +1,13 @@
-Transcriptic.ContainerForm = function(showFormSelector, formSelector) {
-  this.$showForm = $(showFormSelector);
-  this.$containerForm = $(formSelector);
+Transcriptic.ContainerForm = function() {
+  this.$showFormButton = $("button#new_container");
+  this.$containerForm = $("#container_form");
 };
 
 Transcriptic.ContainerForm.prototype = {
   bindEventListeners: function(controller) {
     this.controller = controller;
 
-    this.$showForm.on("click", this.showNewContainerForm.bind(this));
+    this.$showFormButton.on("click", this.showNewContainerForm.bind(this));
     this.$containerForm.on("submit", this.handleContainerFormSubmit.bind(this));
   },
   showNewContainerForm: function(evt) {

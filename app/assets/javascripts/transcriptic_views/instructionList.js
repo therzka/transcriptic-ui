@@ -1,5 +1,5 @@
-Transcriptic.InstructionList = function(instructionListSelector) {
-  this.$instructionList = $(instructionListSelector);
+Transcriptic.InstructionList = function() {
+  this.$instructionList = $("#instruction_list");
 };
 
 Transcriptic.InstructionList.prototype = {
