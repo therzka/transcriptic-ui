@@ -1,11 +1,11 @@
-Transcriptic.Instruction.Distribute = function(container, from, volume) {
-  this.container = container;
-  this.instructionType = "pipette";
-  this.from = from;
-  this.to = [];
-  this.volume = volume;
+Transcriptic.Instruction.Distribute = function(distributeData) {
+  this.container = distributeData.container;
+  this.instructionType = "Pipette";
+  this.from = distributeData.from;
+  this.to = distributeData.to;
+  this.volume = distributeData.volume;
 };
-
+  
 Transcriptic.Instruction.Distribute.prototype = {
   addTo: function(well) {
     this.to.push(well);
@@ -13,8 +13,8 @@ Transcriptic.Instruction.Distribute.prototype = {
   encodeAction: function() {
     var toWells = [];
     for (var w in this.to) {
-      toWells.push({well: w.reference(), volume: this.volume});
+      toWells.push({well: this.to[w].reference(), volume: this.to[w].volume});
     }
-    return {distribute: {from: this.from, to: toWells}};
+    return {distribute: {from: this.from.reference(), to: toWells}};
   }
 };

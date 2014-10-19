@@ -1,6 +1,6 @@
-Transcriptic.Organization = function(organizationID, organizationName) {
-  this.organizationID = organizationID || "ORG_ID";
-  this.organizationName = organizationName || "My Organization";
+Transcriptic.Organization = function(organizationData) {
+  this.organizationID = organizationData.organizationID || "ORG_ID";
+  this.organizationName = organizationData.organizationName || "My Organization";
   this.containers = [];
   this.projects = [];
   this.currentProject;

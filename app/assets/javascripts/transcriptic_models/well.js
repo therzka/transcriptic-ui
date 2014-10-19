@@ -1,7 +1,7 @@
-Transcriptic.Well = function(container, wellIndex, volume) {
-  this.container = container;
-  this.wellIndex = wellIndex;
-  this.volume = volume;
+Transcriptic.Well = function(wellData) {
+  this.container = wellData.container;
+  this.wellIndex = wellData.wellIndex;
+  this.volume = wellData.volume;
 };
 
 Transcriptic.Well.prototype = {

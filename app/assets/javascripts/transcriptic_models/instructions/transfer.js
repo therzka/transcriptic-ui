@@ -1,13 +1,13 @@
-Transcriptic.Instruction.Transfer = function(container, from, to, volume) {
-  this.container = container;
-  this.instructionType = "pipette";
-  this.from = from;
-  this.to = to;
-  this.volume = volume;
+Transcriptic.Instruction.Transfer = function(transferData) {
+  this.container = transferData.container;
+  this.instructionType = "Pipette";
+  this.from = transferData.from;
+  this.to = transferData.to;
+  this.volume = transferData.volume;
 };
 
 Transcriptic.Instruction.Transfer.prototype = {
   encodeAction: function() {
-    return {transfer: [{from: this.from.refence(), to: this.to.reference(), volume: this.volume}]};
+    return {transfer: [{from: this.from.reference(), to: this.to.reference(), volume: this.volume}]};
   }
 };

@@ -15,7 +15,7 @@ Transcriptic.Container.prototype = {
     var wellVolume = this.getWellVolume(this.containerType);
     var numWells = this.containerDimensions[0] * this.containerDimensions[1];
     for(var index = 0; index < numWells; index++) {
-      this.wells.push(new Transcriptic.Well(this, index, wellVolume));
+      this.wells.push(new Transcriptic.Well({container: this, wellIndex: index, volume: wellVolume}));
     }
   },
   getWellVolume: function(containerType) {

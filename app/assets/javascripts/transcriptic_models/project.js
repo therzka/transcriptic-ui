@@ -1,6 +1,6 @@
-Transcriptic.Project = function(projectName, projectID) {
-  this.projectName = projectName || "My Project";
-  this.projectID = projectID || "PROJ_ID";
+Transcriptic.Project = function(projectData) {
+  this.projectName = projectData.projectName || "My Project";
+  this.projectID = projectData.projectID || "PROJ_ID";
   this.transcripticRuns = [];
   this.currentRun;
 };
