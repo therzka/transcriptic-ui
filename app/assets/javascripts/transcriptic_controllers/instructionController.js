@@ -7,8 +7,8 @@ Transcriptic.InstructionController.prototype = {
   setupForms: function() {
     this.instructionForm = new Transcriptic.InstructionForm();
     this.instructionList = new Transcriptic.InstructionList();
-    this.distributeInstructionForm = new Transcriptic.DistributeInstructionForm();
-    this.transferInstructionForm = new Transcriptic.TransferInstructionForm();
+    this.distributeInstructionForm = new Transcriptic.PipetteInstructionForm("distribute");
+    this.transferInstructionForm = new Transcriptic.PipetteInstructionForm("transfer");
   },
   bindEventListeners: function() {
     this.instructionForm.bindEventListeners(this);
