@@ -18,6 +18,6 @@ Transcriptic.Instruction.Distribute.prototype = {
     return {distribute: {from: this.from.reference(), to: toWells}};
   },
   toString: function() {
-    return this.instructionType + "(distribute) " + this.volume + "ml from " + this.from.reference() + " to " + this.to.reference();
+    return this.instructionType + "(distribute) " + this.volume + "ml from " + this.from.reference() + " to " + this.to[0].reference();
   }
 };

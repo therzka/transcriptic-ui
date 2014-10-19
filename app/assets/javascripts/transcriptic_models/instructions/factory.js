@@ -14,7 +14,7 @@ Transcriptic.Instruction.Factory = {
     var toContainer = Transcriptic.organization.getContainer(distributeData.toContainer);
     distributeData.container = fromContainer;
     distributeData.from = fromContainer.getWell(distributeData.fromWell);
-    distributeData.to = toContainer.getWell(distributeData.toWell);
+    distributeData.to = [toContainer.getWell(distributeData.toWell)];
 
     return new Transcriptic.Instruction.Distribute(distributeData);
   },
