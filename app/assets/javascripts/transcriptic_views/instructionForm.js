@@ -18,7 +18,8 @@ Transcriptic.InstructionForm.prototype = {
     evt.preventDefault();
     
     var instructionType = this.$instructionForm.find("#_instruction_type").val();
-    this.controller.createInstruction(instructionType);
+    var containerName = this.$instructionForm.find("#containers_selector").val();
+    this.controller.createInstruction(instructionType, containerName);
     this.clearForm();
   },
   clearForm: function() {

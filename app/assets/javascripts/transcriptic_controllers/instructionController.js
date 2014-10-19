@@ -6,10 +6,13 @@ Transcriptic.InstructionController = function(instructionForm, instructionList) 
 };
 
 Transcriptic.InstructionController.prototype = {
-  createInstruction: function(instructionType) {
-    var instruction = new Transcriptic.Instruction(instructionType);
-    Transcriptic.organization.currentProject.currentRun.addInstruction(instruction);
-    this.instructionList.refresh();
+  createInstruction: function(instructionType, containerName) {
+    switch(instructionType) {
+      case "distribute":
+        break;
+      case "transfer":
+        break;
+    }
   },
   showInstruction: function(index) {
     
