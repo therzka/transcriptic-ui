@@ -6,12 +6,16 @@ Transcriptic.PipetteAction = function(actionType, from, to, volume) {
 };
 
 Transcriptic.PipetteAction.prototype = {
-	encodeJSON: function(){
+	encodeAction: function(){
 		if (this.actionType == "transfer"){
-
+			return {transfer: [{from: this.from, to: this.to, volume: this.volume}]}
 		}
 		if (this.actionType == "distribute"){
-			
+			var toWells = []
+			for (var w in this.to){
+				toWells.push({well: w.to, volume: w.volume})
+			}
+			return {distribute: {from: this.from, to: toWells}}
 		}
 	}
 };
