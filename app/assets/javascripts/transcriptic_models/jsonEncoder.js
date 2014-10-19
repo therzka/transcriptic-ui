@@ -13,7 +13,5 @@ Transcriptic.JSONEncoder=function(organization, project, run){
 }
 
 Transcriptic.JSONEncoder.prototype = {
-	JSONrequest: {},
-
 	
 }
