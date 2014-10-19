@@ -11,5 +11,23 @@ Transcriptic.Organization.prototype = {
   },
   addProject: function(project) {
     this.projects.push(project);
+  },
+  encode: function(){
+    finalObj = {refs:{}};
+    for (var c in this.containers){
+      containername = this.containers[c].containerName;
+      containertype = this.containers[c].containerType;
+      storage = this.containers[c].storage;
+      finalObj["refs"] = {
+        containername: {
+          new: containertype,
+          store: {
+            where: storage
+          }
+        }
+      }
+    }
+    console.log(JSON.stringify(finalObj))
   }
+
 };
