@@ -11,12 +11,17 @@ Transcriptic.Run.prototype = {
     finalObj = {instructions:[]};
 
     for (var i in this.instructions){
-      instructiontype = this.instructions[c].instructionType;
-      actions = this.instructions[c].actions
+      instructiontype = this.instructions[i].instructionType;
+      actions = this.instructions[i].actions
       finalObj["instructions"].push({
-      	op: instuctiontype,
+      	op: instructiontype,
       	groups: []
       })
+      for (var a in actions){
+      	finalObj[instructions][groups].push({
+      		
+      	})
+      }
   	}
     return JSON.stringify(finalObj, null, '\t')
   }

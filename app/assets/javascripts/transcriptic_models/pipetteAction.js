@@ -6,9 +6,9 @@ Transcriptic.PipetteAction = function(actionType, from, to, volume) {
 };
 
 Transcriptic.PipetteAction.prototype = {
-	encodeJSON: function(){
+	encodeAction: function(){
 		if (this.actionType == "transfer"){
-
+			
 		}
 		if (this.actionType == "distribute"){
 			
