@@ -3,6 +3,7 @@ Transcriptic.Organization = function(organizationID, organizationName) {
   this.organizationName = organizationName || "My Organization";
   this.containers = [];
   this.projects = [];
+  this.currentProject;
 };
 
 Transcriptic.Organization.prototype = {
@@ -10,6 +11,7 @@ Transcriptic.Organization.prototype = {
     this.containers.push(container);
   },
   addProject: function(project) {
+    this.currentProject = this.currentProject || project;
     this.projects.push(project);
   },
   encodeRefs: function(){
