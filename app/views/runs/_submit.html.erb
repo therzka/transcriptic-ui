@@ -1,0 +1,22 @@
+<div class="modal fade" id="submitModal" tabindex="-1" role="dialog" aria-labelledby="submitModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="submitModalLabel">Submit Run</h4>
+      </div>
+      <div class="modal-body">
+        <%= bootstrap_form_tag html: { id: "submit_form" } do |f| %>
+          <%= f.email_field :email, class: "email" %>
+          <%= f.text_field :organization_name, class: "organization_name" %>
+          <%= f.text_field :project_id, class: "project_id", label: "Project ID" %>
+          <%= f.text_field :api_key, class: "api_key" %>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary submit">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>

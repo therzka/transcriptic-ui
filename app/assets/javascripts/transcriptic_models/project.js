@@ -1,6 +1,6 @@
 Transcriptic.Project = function(projectData) {
   this.projectName = projectData.projectName || "My Project";
-  this.projectID = projectData.projectID || "PROJ_ID";
+  this.projectID = projectData.projectID;
   this.transcripticRuns = [];
   this.currentRun;
 };
