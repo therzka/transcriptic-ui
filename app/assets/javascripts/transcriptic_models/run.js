@@ -1,5 +1,5 @@
-Transcriptic.Run = function(title) {
-  this.title = title || "My Run";
+Transcriptic.Run = function(runData) {
+  this.title = runData.title || "My Run";
   this.instructions = [];
 };
 
@@ -11,22 +11,20 @@ Transcriptic.Run.prototype = {
     finalObj = {instructions:[]};
 
     for (var i in this.instructions){
-      instructiontype = this.instructions[i].instructionType;
-      actions = this.instructions[i].actions;
-      instructionlist = finalObj["instructions"];
-      instructionlist.push({
-      	op: instructiontype,
-      	groups: []
-      })
-      for (var ins in instructionlist) {
-        if (finalObj["instructions"][ins]["op"] == instructiontype) {	
-          for (var a in actions) {
-            act = actions[a].encodeAction();
-            finalObj["instructions"][ins]["groups"].push(act);
-          }
-        }
+      ins  = this.instructions[i];
+      type = ins.instructionType;
+      instructionList = []
+
+      instructionList.push({
+        op: type,
+        groups:[]
+      });
+      for (var x in instructionList){
+          instructionList[x]["groups"].push(ins.encodeAction())
       }
+      finalObj["instructions"].push(instructionList)
     }
+
     return JSON.stringify(finalObj, null, '\t')
   }
 };
