@@ -1,6 +1,6 @@
 Transcriptic.Organization = function(organizationID, organizationName) {
-  this.organizationID = organizationID;
-  this.organizationName = organizationName;
+  this.organizationID = organizationID || "ORG_ID";
+  this.organizationName = organizationName || "My Organization";
   this.containers = [];
   this.projects = [];
 };

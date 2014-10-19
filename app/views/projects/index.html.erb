@@ -1,5 +1,8 @@
-<h1>Projects</h1>
-<%= link_to "New Project", new_project_path %>
-<% @projects.each do |project| %>
-  <%= link_to project.project_id, project %>
+<%= button_tag "New Container", id: "new_container" %>
+<%= bootstrap_form_tag html: { id: "container_form" } do |f| %>
+  <%= f.text_field :container_name, label: "Name" %>
+  <%= f.text_field :container_id, label: "ID" %>
+  <%= f.select :container_type, ["96-pcr", "96-flat", "96-flat-uv", "96-deep", "384-pcr", "384-flat"], label: "Type" %>
+  <%= f.select :storage, ["ambient", "warm_37", "cold_4", "cold_20", "cold_80"] %>
+  <%= f.submit %>
 <% end %>

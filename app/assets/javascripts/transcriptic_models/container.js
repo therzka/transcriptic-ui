@@ -1,9 +1,10 @@
-Transcriptic.Container = function(containerName, containerType, storage, containerID) {
-  this.containerName = containerName;
-  this.containerType = containerType;
+Transcriptic.Container = function(containerData) {
+  this.containerName = containerData.containerName;
+  this.containerType = containerData.containerType;
+  this.storage = containerData.storage;
+  this.containerID = containerData.containerID;
+  
   this.containerDimensions = this.getContainerDimensions(this.containerType);
-  this.storage = storage;
-  this.containerID = containerID;
   this.wells = [];
 
   this.generateWells();
@@ -14,7 +15,7 @@ Transcriptic.Container.prototype = {
     var wellVolume = this.getWellVolume(this.containerType);
     var numWells = this.containerDimensions[0] * this.containerDimensions[1];
     for(var index = 0; index < numWells; index++) {
-      this.wells.push(new Well(this, index, wellVolume));
+      this.wells.push(new Transcriptic.Well(this, index, wellVolume));
     }
   },
   getWellVolume: function(containerType) {
