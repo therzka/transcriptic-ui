@@ -1,5 +1,5 @@
-Transcriptic.ContainerList = function(containerListSelector) {
-  this.$containerList = $(containerListSelector);
+Transcriptic.ContainerList = function() {
+  this.$containerList = $("#container_list");
 };
 
 Transcriptic.ContainerList.prototype = {
