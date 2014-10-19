@@ -5,6 +5,7 @@ Transcriptic.TransferInstructionForm = function() {
 Transcriptic.TransferInstructionForm.prototype = {
   bindEventListeners: function(controller) {
     this.controller = controller;
+    this.$form.on("submit", this.handleFormSubmit.bind(this));
   },
   show: function(containerName) {
     this.$form.find(".from_container").val(containerName);
@@ -18,5 +19,16 @@ Transcriptic.TransferInstructionForm.prototype = {
       var container = Transcriptic.organization.containers[c];
       $containerDropdown.append("<option value='" + container.containerName + "'>" + container.containerName + "</option>");
     }
+  },
+  handleFormSubmit: function() {
+    var instructionData = {
+      type = "transfer",
+      fromContainer = this.$form.find(".from_container"),
+      fromWell = this.$form.find(".from_well"),
+      toContainer = this.$form.find(".to_container"),
+      toWell = this.$form.find(".to_well"),
+      volume = this.$form.find(".volume")
+    }
+    this.controller.createInstruction(instructionData);
   }
 };

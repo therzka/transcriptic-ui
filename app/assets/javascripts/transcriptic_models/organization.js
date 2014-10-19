@@ -14,6 +14,9 @@ Transcriptic.Organization.prototype = {
     this.currentProject = this.currentProject || project;
     this.projects.push(project);
   },
+  addInstructionToCurrentRun: function(instruction) {
+    this.currentProject.currentRun.addInstruction(instruction);
+  },
   encodeRefs: function(){
     finalObj = {refs:{}};
 
