@@ -14,21 +14,64 @@ Transcriptic.Run.prototype = {
       var ins  = this.instructions[i];
       var type = ins.instructionType;
       var instructionList = []
+
       if (type){
         instructionList.push({
-          op: type,
-          groups:[]
+                op: type,
+                groups:[]
         });
-        for (var x in instructionList){
-            instructionList[x]["groups"].push(ins.encodeAction())
+      for (var x in instructionList){
+            if (instructionList[x]["op"] == type){
+              instructionList[x]["groups"].push(ins.encodeAction());
+            }
+            else{
+              instructionList.push({
+                op: type,
+                groups:[]
+              });
+            }   
         }
-        finalObj["instructions"].push(instructionList)
       }
       else{
         finalObj["instructions"].push(ins.encodeAction());
       }
+        
+      for (var instruction in instructionList){
+        finalObj["instructions"].push(instructionList[instruction])
+      }
     }
-
     return JSON.stringify(finalObj, null, '\t')
-  }
+  },
+  encodeRefs: function(){
+    finalObj = {refs:{}};
+    containers = []
+
+    for (var ins in this.instructions){
+      if (containers.indexOf(this.instructions[ins].container) == -1){
+        containers.push(this.instructions[ins].container)
+      }
+    }
+    for (var c in containers){
+      if (containers[c].containerID == "new"){
+        finalObj["refs"][containers[c].containerName] = 
+          {
+            new: containers[c].containerType,
+            store: {
+              where: containers[c].storage
+            }
+          }
+      }
+      else{
+        finalObj["refs"][containers[c].containerName] = 
+          {
+          id: containers[c].containerID,
+          store: {
+              where: containers[c].storage
+          }
+        }
+      }
+    }
+    return JSON.stringify(finalObj, null, '\t')
+    }
+  
 };
