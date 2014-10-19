@@ -6,7 +6,7 @@ Transcriptic.Run = function(title) {
 Transcriptic.Run.prototype = {
   addInstruction: function(instruction) {
     this.instructions.push(instruction);
-  }
+  },
   encodeInstructions: function(){
     finalObj = {instructions:[]};
 
