@@ -1,6 +1,7 @@
 Transcriptic.ContainerForm = function() {
   this.$showFormButton = $("button#new_container");
   this.$containerForm = $("#container_form");
+  this.$containerAccordion = $("#accordion");
 };
 
 Transcriptic.ContainerForm.prototype = {
@@ -13,6 +14,7 @@ Transcriptic.ContainerForm.prototype = {
   showNewContainerForm: function(evt) {
     Transcriptic.Workspace.clear();
     this.$containerForm.show();
+    this.$containerAccordion.show();
   },
   handleContainerFormSubmit: function(evt) {
     evt.preventDefault();

@@ -1,7 +1,64 @@
 <%= bootstrap_form_tag html: { id: "container_form" } do |f| %>
-  <%= f.text_field :container_name, label: "Name" %>
-  <%= f.text_field :container_id, label: "ID" %>
-  <%= f.select :container_type, [["96 well V-bottom (PCR) plate", "96-pcr"], ["96 well flat-bottom optically clear plate", "96-flat"], ["96 well flat-bottom UV transparent plate", "96-flat-uv"], ["96 well flat-bottom extended capacity optically opaque plate", "96-deep"], ["384 well V-bottom (PCR) plate", "384-pcr"], ["384 well flat-bottom optically clear plate", "384-flat"]], label: "Type" %>
-  <%= f.select :storage, ["ambient", "warm_37", "cold_4", "cold_20", "cold_80"] %>
-  <%= f.submit %>
+	<div class="panel-group" id="accordion">
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h4 class="panel-title">
+	        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+	          Name
+	        </a>
+	      </h4>
+	    </div>
+	    <div id="collapseOne" class="panel-collapse collapse in">
+	      <div class="panel-body">
+				  <%= f.text_field :container_name %>
+	      </div>
+	    </div>
+	  </div>
+
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h4 class="panel-title">
+	        <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+	          ID
+	        </a>
+	      </h4>
+	    </div>
+	    <div id="collapseTwo" class="panel-collapse collapse">
+	      <div class="panel-body">
+				  <%= f.text_field :container_id%>
+	      </div>
+	    </div>
+	  </div>
+
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h4 class="panel-title">
+	        <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+	          Type
+	        </a>
+	      </h4>
+	    </div>
+	    <div id="collapseThree" class="panel-collapse collapse">
+	      <div class="panel-body">
+				  <%= f.select :container_type, [["96 well V-bottom (PCR) plate", "96-pcr"], ["96 well flat-bottom optically clear plate", "96-flat"], ["96 well flat-bottom UV transparent plate", "96-flat-uv"], ["96 well flat-bottom extended capacity optically opaque plate", "96-deep"], ["384 well V-bottom (PCR) plate", "384-pcr"], ["384 well flat-bottom optically clear plate", "384-flat"]] %>
+	      </div>
+	    </div>
+	  </div>
+
+	  <div class="panel panel-default">
+	    <div class="panel-heading">
+	      <h4 class="panel-title">
+	        <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+	          Storage
+	        </a>
+	      </h4>
+	    </div>
+	    <div id="collapseFour" class="panel-collapse collapse">
+	    	<div class="panel-body">
+			  <%= f.select :storage, ["ambient", "warm_37", "cold_4", "cold_20", "cold_80"] %>
+	      </div>
+	    </div>
+	  </div>
+	  <%= f.submit %>
+  <div>
 <% end %>
