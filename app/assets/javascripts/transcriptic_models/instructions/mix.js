@@ -1,5 +1,6 @@
 Transcriptic.Instruction.Mix = function(mixData) {
   this.well = mixData.well
+  this.instructionType = "Pipette"
   this.speed = mixData.speed
   this.volume = mixData.volume
   this.repititions = mixData.repititions

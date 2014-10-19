@@ -14,15 +14,19 @@ Transcriptic.Run.prototype = {
       ins  = this.instructions[i];
       type = ins.instructionType;
       instructionList = []
-
-      instructionList.push({
-        op: type,
-        groups:[]
-      });
-      for (var x in instructionList){
-          instructionList[x]["groups"].push(ins.encodeAction())
+      if (type){
+        instructionList.push({
+          op: type,
+          groups:[]
+        });
+        for (var x in instructionList){
+            instructionList[x]["groups"].push(ins.encodeAction())
+        }
+        finalObj["instructions"].push(instructionList)
       }
-      finalObj["instructions"].push(instructionList)
+      else{
+        finalObj["instructions"].push(ins.encodeAction());
+      }
     }
 
     return JSON.stringify(finalObj, null, '\t')
