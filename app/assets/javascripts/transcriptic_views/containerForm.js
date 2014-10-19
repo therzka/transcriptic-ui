@@ -16,11 +16,21 @@ Transcriptic.ContainerForm.prototype = {
   handleContainerFormSubmit: function(evt) {
     evt.preventDefault();
     
-    var containerName = this.$containerForm.find("#container_name").val();
-    var containerID = this.$containerForm.find("#container_name").val();
-    var containerType = this.$containerForm.find("#container_name").val();
-    var storage = this.$containerForm.find("#container_name").val();
+    var containerData = {
+      containerName:  this.$containerForm.find("#container_name").val(),
+      containerID:    this.$containerForm.find("#container_id").val(),
+      containerType:  this.$containerForm.find("#_container_type").val(),
+      storage:        this.$containerForm.find("#_storage").val()
+    }
 
-    this.controller.createContainer(containerName, containerID, containerType, storage)
+    this.controller.createContainer(containerData);
+    this.clearForm();
+  },
+  clearForm: function() {
+    this.$containerForm.find("#container_name").val("");
+    this.$containerForm.find("#container_id").val("");
+    this.$containerForm.find("#_container_type").val("");
+    this.$containerForm.find("#_storage").val("");
+    this.$containerForm.hide();
   }
 };

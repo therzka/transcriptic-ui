@@ -4,7 +4,7 @@ Transcriptic.ContainerController = function(containerForm) {
 };
 
 Transcriptic.ContainerController.prototype = {
-  createContainer: function(containerName, containerID, containerType, storage) {
-    console.log(containerName);
+  createContainer: function(containerData) {
+    Transcriptic.organization.addContainer(new Transcriptic.Container(containerData));
   }
 };
