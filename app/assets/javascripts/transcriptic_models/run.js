@@ -8,7 +8,7 @@ Transcriptic.Run.prototype = {
     this.instructions.push(instruction);
   },
   encodeInstructions: function(){
-    finalObj = {instructions:[]};
+    var finalObj = {instructions:[]};
 
     for (var i in this.instructions){
       var ins  = this.instructions[i];
@@ -43,8 +43,8 @@ Transcriptic.Run.prototype = {
     return JSON.stringify(finalObj, null, '\t')
   },
   encodeRefs: function(){
-    finalObj = {refs:{}};
-    containers = []
+    var finalObj = {refs:{}};
+    var containers = []
 
     for (var ins in this.instructions){
       if (containers.indexOf(this.instructions[ins].container) == -1){
