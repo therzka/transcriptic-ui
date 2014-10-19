@@ -11,6 +11,7 @@ Transcriptic.ContainerForm.prototype = {
     this.$containerForm.on("submit", this.handleContainerFormSubmit.bind(this));
   },
   showNewContainerForm: function(evt) {
+    Transcriptic.Workspace.clear();
     this.$containerForm.show();
   },
   handleContainerFormSubmit: function(evt) {

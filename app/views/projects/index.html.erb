@@ -1,7 +1,15 @@
-<%= button_tag "New Container", id: "new_container" %>
-<div id="container_list"></div>
-<%= render "containers/form" %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      <%= button_tag "New Container", id: "new_container" %>
+      <div id="container_list"></div>
+      <%= button_tag "New Instruction", id: "new_instruction" %>
+      <div id="instruction_list"></div>
+    </div>
 
-<%= button_tag "New Instruction", id: "new_instruction" %>
-<div id="instruction_list"></div>
-<%= render "instructions/form" %>
+    <div id="workspace" class="col-md-10">
+      <%= render "containers/form" %>
+      <%= render "instructions/form" %>
+    </div>
+  </div>
+</div>

@@ -11,6 +11,7 @@ Transcriptic.InstructionForm.prototype = {
     this.$instructionForm.on("submit", this.handleInstructionFormSubmit.bind(this));
   },
   showNewInstructionForm: function(evt) {
+    Transcriptic.Workspace.clear();
     this.$instructionForm.show();
   },
   handleInstructionFormSubmit: function(evt) {
