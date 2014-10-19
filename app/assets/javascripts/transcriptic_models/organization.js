@@ -17,6 +17,14 @@ Transcriptic.Organization.prototype = {
   addInstructionToCurrentRun: function(instruction) {
     this.currentProject.currentRun.addInstruction(instruction);
   },
+  getContainer: function(containerName) {
+    for (var c in this.containers){
+      if(containerName === this.containers[c].containerName) {
+        return this.containers[c];
+      }
+    }
+    return null;
+  },
   encodeRefs: function(){
     finalObj = {refs:{}};
 

@@ -27,7 +27,8 @@ Transcriptic.InstructionController.prototype = {
     }
   },
   createInstruction: function(instructionData) {
-    var instruction = Transcriptic.Instruction.Factory.create(instructionData);
+    var instruction = Transcriptic.Instruction.Factory.create(instructionData.type, instructionData);
     Transcriptic.organization.addInstructionToCurrentRun(instruction);
+    this.instructionList.refresh();
   }
 };

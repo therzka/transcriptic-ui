@@ -25,6 +25,7 @@ Transcriptic.ContainerForm.prototype = {
     }
 
     this.controller.createContainer(containerData);
+    this.$containerForm.hide();
     this.clearForm();
   },
   clearForm: function() {

@@ -43,6 +43,8 @@ Transcriptic.Container.prototype = {
     else if(/.*384.*/.test(containerType)) {
       return [16, 24];
     }
+  },
+  getWell: function(index) {
+    return this.wells[index];
   }
-
 };

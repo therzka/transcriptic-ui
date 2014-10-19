@@ -17,7 +17,7 @@ Transcriptic.InstructionList.prototype = {
     var instructions = Transcriptic.organization.currentProject.currentRun.instructions;
     for(var c in instructions) {
       var instruction = instructions[c];
-      this.$instructionList.append("<p><a href='#' class='instruction' data-index='" + c + "'>" + instruction.instructionType + "</a></p>");
+      this.$instructionList.append("<p><a href='#' class='instruction' data-index='" + c + "'>" + instruction.toString() + "</a></p>");
     }
   }
 };

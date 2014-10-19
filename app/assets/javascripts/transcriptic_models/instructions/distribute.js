@@ -16,5 +16,8 @@ Transcriptic.Instruction.Distribute.prototype = {
       toWells.push({well: this.to[w].reference(), volume: this.to[w].volume});
     }
     return {distribute: {from: this.from.reference(), to: toWells}};
+  },
+  toString: function() {
+    return this.instructionType + "(distribute) " + this.volume + "ml from " + this.from.reference() + " to " + this.to.reference();
   }
 };

@@ -23,15 +23,24 @@ Transcriptic.PipetteInstructionForm.prototype = {
   },
   handleFormSubmit: function(evt) {
     evt.preventDefault();
-    
+
     var instructionData = {
       type: this.actionType,
-      fromContainer: this.$form.find(".from_container"),
-      fromWell: this.$form.find(".from_well"),
-      toContainer: this.$form.find(".to_container"),
-      toWell: this.$form.find(".to_well"),
-      volume: this.$form.find(".volume")
-    }
+      fromContainer: this.$form.find(".from_container").val(),
+      fromWell: parseInt(this.$form.find(".from_well").val(), 10),
+      toContainer: this.$form.find(".to_container").val(),
+      toWell: parseInt(this.$form.find(".to_well").val(), 10),
+      volume: parseInt(this.$form.find(".volume").val(), 10)
+    };
     this.controller.createInstruction(instructionData);
+    this.clearForm();
+  },
+  clearForm: function() {
+    this.$form.find(".from_container").val("");
+    this.$form.find(".from_well").val("");
+    this.$form.find(".to_container").val("");
+    this.$form.find(".to_well").val("");
+    this.$form.find(".volume").val("");
+    this.$form.hide();
   }
 };
