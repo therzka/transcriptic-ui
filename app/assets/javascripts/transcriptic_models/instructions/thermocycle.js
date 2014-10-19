@@ -6,11 +6,11 @@ Transcriptic.Instruction.Thermocycle = function(thermocycleData) {
 };
 
 Transcriptic.Instruction.Thermocycle.prototype = {
-  addThermogroup: function(thermogroupData{
+  addThermogroup: function(thermogroupData){
   	//assumes hash in the form of {cycles: int, steps: [{duration: int, temperature: int}, ... ]}
   	this.groups.push(thermogroupData);
   },
   encodeAction: function() {
-    thermo = {op: thermocycle, object: this.container, groups: this.groups};
+    return {op: thermocycle, object: this.container, groups: this.groups};
   }
 };

@@ -11,9 +11,9 @@ Transcriptic.Run.prototype = {
     finalObj = {instructions:[]};
 
     for (var i in this.instructions){
-      ins  = this.instructions[i];
-      type = ins.instructionType;
-      instructionList = []
+      var ins  = this.instructions[i];
+      var type = ins.instructionType;
+      var instructionList = []
       if (type){
         instructionList.push({
           op: type,

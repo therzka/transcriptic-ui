@@ -14,7 +14,7 @@ Transcriptic.Instruction.Consolidate.prototype = {
   encodeAction: function() {
     var fromWells = [];
     for (var w in this.from) {
-      toWells.push({well: this.from[w].reference(), volume: this.from[w].volume});
+      fromWells.push({well: this.from[w].reference(), volume: this.from[w].volume});
     }
     return {consolidate: {to: this.from.reference(), from: fromWells}};
   }
