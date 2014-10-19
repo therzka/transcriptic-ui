@@ -2,7 +2,7 @@ Transcriptic.Container = function(containerData) {
   this.containerName = containerData.containerName;
   this.containerType = containerData.containerType;
   this.storage = containerData.storage;
-  this.containerID = containerData.containerID;
+  this.containerID = containerData.containerID || "new";
   
   this.containerDimensions = this.getContainerDimensions(this.containerType);
   this.wells = [];
