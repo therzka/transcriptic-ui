@@ -8,14 +8,14 @@
       <div class="modal-body">
         <%= bootstrap_form_tag html: { id: "submit_form" } do |f| %>
           <%= f.email_field :email, class: "email" %>
-          <%= f.text_field :organization, class: "organization" %>
-          <%= f.text_field :project, class: "project", label: "Project ID" %>
-          <%= f.text_field :transcriptic_api_key, class: "transcriptic_api_key" %>
+          <%= f.text_field :organization_name, class: "organization_name" %>
+          <%= f.text_field :project_id, class: "project_id", label: "Project ID" %>
+          <%= f.text_field :api_key, class: "api_key" %>
         <% end %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-primary submit">Submit</button>
       </div>
     </div>
   </div>
