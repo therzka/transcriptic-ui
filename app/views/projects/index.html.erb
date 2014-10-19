@@ -1,10 +1,11 @@
 <div class="container">
   <div class="row">
     <div class="col-md-2">
-      <%= button_tag "New Container", id: "new_container" %>
+      <%= button_tag "New Container", id: "new_container", class: "btn btn-primary btn-md" %>
       <div id="container_list"></div>
-      <%= button_tag "New Instruction", id: "new_instruction" %>
+      <%= button_tag "New Instruction", id: "new_instruction", class: "btn btn-primary btn-md" %>
       <div id="instruction_list"></div>
+      <%= button_tag "Submit", class: "btn btn-success btn-md", data: { toggle: "modal", target: "#submitModal" } %>
     </div>
 
     <div id="workspace" class="col-md-10">
@@ -15,3 +16,4 @@
     </div>
   </div>
 </div>
+<%= render "runs/submit" %>
