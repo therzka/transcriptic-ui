@@ -6,5 +6,8 @@ Transcriptic.Instruction.Cover = function(coverData) {
 Transcriptic.Instruction.Cover.prototype = {
   encodeAction: function() {
     return {op: cover, object: this.container, lid: this.lid};
+  },
+  getContainers: function() {
+    return [this.container];
   }
 };

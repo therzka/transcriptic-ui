@@ -12,7 +12,6 @@ Transcriptic.Instruction.Factory = {
   createDistributeAction: function(distributeData) {
     var fromContainer = Transcriptic.organization.getContainer(distributeData.fromContainer);
     var toContainer = Transcriptic.organization.getContainer(distributeData.toContainer);
-    distributeData.container = fromContainer;
     distributeData.from = fromContainer.getWell(distributeData.fromWell);
     distributeData.to = [toContainer.getWell(distributeData.toWell)];
 
@@ -22,10 +21,9 @@ Transcriptic.Instruction.Factory = {
     var fromContainer = Transcriptic.organization.getContainer(transferData.fromContainer);
     var toContainer = Transcriptic.organization.getContainer(transferData.toContainer);
 
-    transferData.container = fromContainer;
     transferData.from = fromContainer.getWell(transferData.fromWell);
     transferData.to = toContainer.getWell(transferData.toWell);
 
     return new Transcriptic.Instruction.Transfer(transferData);
-  },
+  }
 };

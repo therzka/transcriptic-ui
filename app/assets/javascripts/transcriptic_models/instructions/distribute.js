@@ -1,5 +1,4 @@
 Transcriptic.Instruction.Distribute = function(distributeData) {
-  this.container = distributeData.container;
   this.instructionType = "Pipette";
   this.from = distributeData.from;
   this.to = distributeData.to;
@@ -19,5 +18,8 @@ Transcriptic.Instruction.Distribute.prototype = {
   },
   toString: function() {
     return this.instructionType + "(distribute) " + this.volume + "ul from " + this.from.reference() + " to " + this.to[0].reference();
+  },
+  getContainers: function() {
+    return [this.from.container, this.to.container];
   }
 };
