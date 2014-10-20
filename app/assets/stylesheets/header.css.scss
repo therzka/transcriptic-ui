@@ -1,0 +1,26 @@
+.navbar.navbar-default {
+  border-radius: 0;
+  border: 0;
+  background-color: #3b4a59;
+
+  .logo {
+    margin-top: 20px;
+    width: 191px;
+    height: 32px;
+    background-image: image-url("logo@2x.png");
+    background-size: 191px 32px;
+  }
+
+  li {
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 12px 15px;
+
+    a {
+      color: #bec3c9;
+      &:hover {
+        color: #f59431;
+      }
+    }
+  }
+}
