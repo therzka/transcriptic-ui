@@ -6,7 +6,7 @@ Transcriptic.ContainerList.ContainerParser = {
       text: "New Container",
       cssClass: "btn",
       callback: controller.handleNewContainerClick.bind(controller)
-    })
+    });
 
     for(var i in containers) {
       containerData.push({ 
