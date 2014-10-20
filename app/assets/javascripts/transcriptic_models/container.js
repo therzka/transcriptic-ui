@@ -46,5 +46,8 @@ Transcriptic.Container.prototype = {
   },
   getWell: function(index) {
     return this.wells[index];
+  },
+  toString: function() {
+    return this.containerName + " (" + this.containerType + ")"
   }
 };

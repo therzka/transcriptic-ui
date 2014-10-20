@@ -8,7 +8,6 @@ TestData = {
 		  storage:        "ambient"
 		}
 		Transcriptic.organization.addContainer(new Transcriptic.Container(containerData));
-		$("#container_list").append("<p>" + containerData.containerName + "</p>");
 	},
 	generateTransferInstruction: function(evt) {
 		var fromContainer = TestData.getRandomContainer();
@@ -53,7 +52,16 @@ TestData = {
 		$("#instruction_list").append(instruction.toString());
 	},
 	generateContainerList: function() {
-		var treeData = {
+		var func1 = function(evt) {
+			console.log("FUNC ONE");
+			console.log($(evt.currentTarget));
+		};
+		var func2 = function(evt) {
+			console.log("FUNC TWO");
+			console.log($(evt.currentTarget).data());
+		};
+
+		var treeData = [{
 			text: "Containers",
 			nodes: [
 				{text: "container_one"}, 
@@ -62,13 +70,20 @@ TestData = {
 					data: {index: 0, type: "test"},
 					nodes: [
 						{text: "subcontainer1"},
-						{text: "subcontainer2"}
+						{
+							text: "subcontainer2",
+							callback: func1
+						}
 					]
 				},
-				{text: "container_three"},
+				{
+					text: "container_three",
+					data: {index: 1, type: "other test"},
+					callback: func2
+				},
 				{text: "container_four"}
 			]
-		};
+		}];
 
 		var treeWidget = new Transcriptic.Tree.TreeWidget("#container-workspace");
 		treeWidget.renderTree(treeData);

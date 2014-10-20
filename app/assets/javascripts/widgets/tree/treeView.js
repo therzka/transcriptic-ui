@@ -11,7 +11,10 @@ Transcriptic.Tree.TreeView.prototype = {
     this.$container.empty();
     var $tree = $("<ul class='tree'></ul>");
 
-    this.render(treeData, $tree);
+    for(var i in treeData) {
+      this.render(treeData[i], $tree);
+    }
+    
     this.$container.append($tree);
   },
   render: function(nodeData, $parent) {
@@ -20,6 +23,8 @@ Transcriptic.Tree.TreeView.prototype = {
 
     this.addDataToNode($listElem, nodeData.data);
     this.addSubtree($listElem, nodeData.nodes);
+    this.addCallback($listElem, nodeData.callback);
+    this.addClass($listElem, nodeData.cssClass);
   },
   addDataToNode: function($node, dataList) {
     for(var data in dataList) {
@@ -27,7 +32,7 @@ Transcriptic.Tree.TreeView.prototype = {
     }
   },
   addSubtree: function($node, children) {
-    if(children != null) {
+    if(children) {
       var $subTree = $("<ul></ul>");
       $node.addClass("collapsed");
       $subTree.hide();
@@ -38,6 +43,14 @@ Transcriptic.Tree.TreeView.prototype = {
         this.render(node, $subTree);      
       }
     }
+  },
+  addCallback: function($node, callback) {
+    if(callback) {
+      $node.on("click", callback);
+    }
+  },
+  addClass: function($node, cssClass) {
+    $node.addClass(cssClass);
   },
   handleParentNodeClick: function(evt) {
     evt.stopPropagation();
