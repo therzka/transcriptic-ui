@@ -18,14 +18,23 @@ Transcriptic.Tree.TreeView.prototype = {
     var $listElem = $("<li>" + nodeData.text + "</li>");
     $parent.append($listElem);
 
-    if(nodeData.nodes != null) {
+    this.addDataToNode($listElem, nodeData.data);
+    this.addSubtree($listElem, nodeData.nodes);
+  },
+  addDataToNode: function($node, dataList) {
+    for(var data in dataList) {
+      $node.data(data, dataList[data]);
+    }
+  },
+  addSubtree: function($node, children) {
+    if(children != null) {
       var $subTree = $("<ul></ul>");
-      $listElem.addClass("collapsed");
+      $node.addClass("collapsed");
       $subTree.hide();
-      $listElem.append($subTree);
+      $node.append($subTree);
 
-      for(var i in nodeData.nodes) {
-        var node = nodeData.nodes[i];
+      for(var i in children) {
+        var node = children[i];
         this.render(node, $subTree);      
       }
     }

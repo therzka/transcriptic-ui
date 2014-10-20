@@ -59,6 +59,7 @@ TestData = {
 				{text: "container_one"}, 
 				{
 					text: "container_two",
+					data: {index: 0, type: "test"},
 					nodes: [
 						{text: "subcontainer1"},
 						{text: "subcontainer2"}
