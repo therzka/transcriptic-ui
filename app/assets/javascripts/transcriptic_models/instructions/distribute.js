@@ -20,6 +20,11 @@ Transcriptic.Instruction.Distribute.prototype = {
     return this.instructionType + "(distribute) " + this.volume + "ul from " + this.from.reference() + " to " + this.to[0].reference();
   },
   getContainers: function() {
-    return [this.from.container, this.to.container];
+    var toContainers = [];
+    for(var i in this.to) {
+      toContainers.push(this.to[i].container);
+    }
+    toContainers.push(this.from.container);
+    return toContainers;
   }
 };
