@@ -9,7 +9,10 @@ Transcriptic.ContainerList.ContainerParser = {
     })
 
     for(var i in containers) {
-      containerData.push({ text: containers[i].toString() });
+      containerData.push({ 
+        text: containers[i].toString(), 
+        cssClass: "container_elem " + containers[i].storage
+      });
     }
 
     return containerData;

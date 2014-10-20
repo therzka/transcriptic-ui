@@ -2,40 +2,35 @@
   <div class="row">
     <div class="col-md-3">
       <div class="row">
-        <div id="organization-workspace">
+        <div class="workspace" id="organization_workspace">
           ORGANIZATION WORKSPACE
         </div>
       </div>
       <div class="row">
-        <div id="container-workspace">
+        <div class="workspace" id="container_workspace">
           <div id="container_list"></div>
         </div>
+        <%= render "shared/test_controls" %>
       </div>
     </div>
     <div class="col-md-9">
-      <div id="instruction-workspace">
-        <div class="row">
-          <%= button_tag "New Instruction", id: "new_instruction", class: "btn btn-primary btn-md" %>
-        </div>
-        <div class="row">
+      <div class="row">
+        <%= button_tag "New Instruction", id: "new_instruction_btn", class: "btn btn-primary btn-md" %>
+      </div>
+      <div class="row">
+        <div class="workspace" id="instruction_workspace">
           INSTRUCTION WORKSPACE
           <div id="instruction_list"></div>
           <%= render "instructions/form" %>
           <%= render "instructions/distribute_form" %>
           <%= render "instructions/transfer_form" %>
         </div>
-        <div class="row">
-          <%= button_tag "Submit", class: "btn btn-success btn-md", data: { toggle: "modal", target: "#submitModal" } %>
-        </div>
-      <div>
+      </div>
+      <div class="row">
+        <%= button_tag "Submit", class: "btn btn-success btn-md", id: "submit_run_btn", data: { toggle: "modal", target: "#submitModal" } %>
+      </div>
     </div>
   </div>
 </div>
 <%= render "runs/submit" %>
 <%= render "containers/form" %>
-
-
-<%= button_tag "Generate Test Container", id: "test_container" %>
-<%= button_tag "Generate Container Tree", id: "test_container_tree" %>
-<%= button_tag "Generate Test Transfer", id: "test_transfer" %>
-<%= button_tag "Generate Test Distribute", id: "test_distribute" %>
