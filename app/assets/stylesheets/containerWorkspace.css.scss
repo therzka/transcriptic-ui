@@ -1,0 +1,23 @@
+#container_workspace {
+  height: 250px;
+  .tree {
+    .btn {
+      width: 100%;
+    }
+    .container_elem {
+      color: #ecf0f1;
+      margin: 5px 0 5px;
+      padding: 5px;
+      background-color: #d9d2ce;
+      border-radius: 4px;
+      &:hover {
+        background-color: #bdc3c7;
+      }
+      &.ambient { background-color: #e67e22; }
+      &.warm_37 { background-color: #e74c3c; }
+      &.cold_4 { background-color: #bdc3c7; }
+      &.cold_20 { background-color: #3498db; }
+      &.cold_80 { background-color: #34495e; }
+    }
+  }
+}

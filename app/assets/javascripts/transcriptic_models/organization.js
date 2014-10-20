@@ -26,5 +26,8 @@ Transcriptic.Organization.prototype = {
       }
     }
     return null;
+  },
+  toString: function() {
+    return this.organizationName;
   }
 };

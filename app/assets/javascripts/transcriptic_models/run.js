@@ -76,6 +76,8 @@ Transcriptic.Run.prototype = {
       }
     }
     return refs;
+  },
+  toString: function() {
+    return this.title;
   }
-  
 };
