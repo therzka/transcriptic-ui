@@ -30,10 +30,11 @@ Transcriptic.Tree.TreeView.prototype = {
     this.addSubtree($listElem, nodeData.nodes);
     this.addCallback($text, nodeData.callback);
     this.addClass($text, nodeData.cssClass);
+    this.addIcon($listElem, nodeData.icon);
   },
   addExpander: function($node) {
-    var $expander = "<i class='expander fa fa-plus'></i>";
-    $node.prepend($expander);
+    var $expander = this.addIcon($node, "fa fa-plus")
+    $expander.addClass("expander");
   },
   addTextToNode: function($node, text) {
     var $nodeText = $("<span>" + text + "</span>");
@@ -67,6 +68,16 @@ Transcriptic.Tree.TreeView.prototype = {
   },
   addClass: function($node, cssClass) {
     $node.addClass(cssClass);
+  },
+  addIcon: function($node, icon) {
+    if(icon) {
+      $node.find("i").remove();
+
+      var $iconElem = $("<i></i>");
+      $iconElem.addClass(icon);
+      $node.prepend($iconElem);
+      return $iconElem;
+    }
   },
   handleParentNodeClick: function(evt) {
     evt.stopPropagation();

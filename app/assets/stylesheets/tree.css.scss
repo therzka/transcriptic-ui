@@ -4,19 +4,18 @@
     list-style: none;
     padding-left: 1em;
     cursor: pointer;
-    .expander {
+    i {
       font-family: FontAwesome;
       display: inline-block;
       margin-left: -1em;
       width: 1em;
-      &:hover {
+      &.expander:hover {
         color: #f78848;
       }
     }
     .span {
       display: inline-block;
     }
-
     .btn {
       color: #fff;
       background-color: #428bca;
