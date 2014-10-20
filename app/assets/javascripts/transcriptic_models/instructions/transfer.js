@@ -8,9 +8,9 @@ Transcriptic.Instruction.Transfer = function(transferData) {
 
 Transcriptic.Instruction.Transfer.prototype = {
   encodeAction: function() {
-    return {transfer: [{from: this.from.reference(), to: this.to.reference(), volume: this.volume}]};
+    return {transfer: [{from: this.from.reference(), to: this.to.reference(), volume: this.volume.toString() + ":microliter"}]};
   },
   toString: function() {
-    return this.instructionType + "(transfer) " + this.volume + "ml from " + this.from.reference() + " to " + this.to.reference();
+    return this.instructionType + "(transfer) " + this.volume + "ul from " + this.from.reference() + " to " + this.to.reference();
   }
 };

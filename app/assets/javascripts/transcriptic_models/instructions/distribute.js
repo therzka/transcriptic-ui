@@ -13,11 +13,11 @@ Transcriptic.Instruction.Distribute.prototype = {
   encodeAction: function() {
     var toWells = [];
     for (var w in this.to) {
-      toWells.push({well: this.to[w].reference(), volume: this.to[w].volume});
+      toWells.push({well: this.to[w].reference(), volume: this.to[w].volume.toString() + ":microliter"});
     }
     return {distribute: {from: this.from.reference(), to: toWells}};
   },
   toString: function() {
-    return this.instructionType + "(distribute) " + this.volume + "ml from " + this.from.reference() + " to " + this.to[0].reference();
+    return this.instructionType + "(distribute) " + this.volume + "ul from " + this.from.reference() + " to " + this.to[0].reference();
   }
 };
