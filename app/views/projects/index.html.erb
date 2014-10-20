@@ -10,7 +10,7 @@
         <div class="workspace" id="container_workspace">
           <div id="container_list"></div>
         </div>
-        <%= render "shared/test_controls" %>
+        <%= render "scrap/test_controls" %>
       </div>
     </div>
     <div class="col-md-9">
@@ -19,11 +19,9 @@
       </div>
       <div class="row">
         <div class="workspace" id="instruction_workspace">
-          INSTRUCTION WORKSPACE
-          <div id="instruction_list"></div>
-          <%= render "instructions/form" %>
-          <%= render "instructions/distribute_form" %>
-          <%= render "instructions/transfer_form" %>
+          <div id="instruction_list">
+            <%= render "scrap/instruction_list" %>
+          </div>
         </div>
       </div>
       <div class="row">
