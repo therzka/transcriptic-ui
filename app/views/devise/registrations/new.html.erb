@@ -4,7 +4,6 @@
 <%= devise_error_messages! %>
 
 <%= f.email_field :email, autofocus: true %>
-<%= f.text_field :lab_id %>
 
 <% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %>
 <%= f.password_field :password, autocomplete: "off" %>
