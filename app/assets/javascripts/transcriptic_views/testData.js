@@ -52,10 +52,31 @@ TestData = {
 		var instructions = Transcriptic.organization.currentProject.currentRun.instructions;
 		$("#instruction_list").append(instruction.toString());
 	},
+	generateContainerList: function() {
+		var treeData = {
+			text: "Containers",
+			nodes: [
+				{text: "container_one"}, 
+				{
+					text: "container_two",
+					nodes: [
+						{text: "subcontainer1"},
+						{text: "subcontainer2"}
+					]
+				},
+				{text: "container_three"},
+				{text: "container_four"}
+			]
+		};
+
+		var treeWidget = new Transcriptic.Tree.TreeWidget("#container-workspace");
+		treeWidget.renderTree(treeData);
+	},
 	bindEventListeners: function(){
 		$("button#test_container").on("click", TestData.generateTestContainer.bind(this));
 		$("button#test_transfer").on("click", TestData.generateTransferInstruction.bind(this));
 		$("button#test_distribute").on("click", TestData.generateDistributeInstruction.bind(this));
+		$("button#test_container_tree").on("click", TestData.generateContainerList.bind(this));
 	},
 	getRandomContainer: function(){
 		var numContainers = Transcriptic.organization.containers.length;
