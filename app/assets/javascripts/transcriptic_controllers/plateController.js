@@ -27,7 +27,7 @@ Transcriptic.PlateController.prototype = {
 		var selectedWells = [];
 
   		$(".ui-selected").each(function(){
-  			selectedWells.push($(this).attr("id"));
+  			selectedWells.push(parseInt($(this).attr("id")));
   		})
 
   		return selectedWells
