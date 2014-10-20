@@ -1,14 +1,15 @@
-<div class="modal fade" id="runModal" tabindex="-1" role="dialog" aria-labelledby="runModalLabel" aria-hidden="true">
+<div class="modal fade" id="projectModal" tabindex="-1" role="dialog" aria-labelledby="projectModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="runModalLabel">New Run</h4>
+        <h4 class="modal-title" id="projectModalLabel">New Project</h4>
       </div>
       <div class="modal-body">
-        <%= bootstrap_form_tag html: { id: "run_form" } do |f| %>
-          <%= f.text_field :project, disabled: true, label: "Project" %>
-          <%= f.text_field :title, label: "Run Name" %>
+        <%= bootstrap_form_tag html: { id: "project_form" } do |f| %>
+          <%= f.text_field :organization, disabled: true, label: "Organization" %>
+          <%= f.text_field :project_name, label: "Project Name" %>
+          <%= f.text_field :project_id, label: "Project ID" %>
         <% end %>
       </div>
       <div class="modal-footer">

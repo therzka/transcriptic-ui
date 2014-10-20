@@ -24,6 +24,6 @@ Transcriptic.ProfileList.RunForm.prototype = {
     this.$modal.modal('hide');
   },
   clearForm: function() {
-    title: this.$form.find("#title").val()
+    this.$form.find("#title").val("")
   }
 };
