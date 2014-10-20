@@ -1,14 +1,26 @@
+$header-back-color: #ecf0f1;
+$a-hover: #f59431;
+
 .navbar.navbar-default {
   border-radius: 0;
   border: 0;
   background-color: #3b4a59;
 
+  a {
+    text-decoration: none;
+  }
+
   .logo {
+    font-style: italic;
+    text-transform: uppercase;
+    font-size: 1.8em;
     margin-top: 20px;
     width: 191px;
     height: 32px;
-    background-image: image-url("logo@2x.png");
-    background-size: 191px 32px;
+    color: $header-back-color;
+    &:hover {
+      color: $a-hover;
+    }
   }
 
   li {
@@ -19,7 +31,7 @@
     a {
       color: #bec3c9;
       &:hover {
-        color: #f59431;
+        color: $a-hover;
       }
     }
   }
