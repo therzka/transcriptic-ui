@@ -12,8 +12,6 @@
       </div>
       <div class="row">
         <div id="container-workspace">
-          CONTAINER WORKSPACE
-          <%= button_tag "New Container", id: "new_container", class: "btn btn-primary btn-md" %>
           <div id="container_list"></div>
         </div>
       </div>
@@ -26,7 +24,6 @@
         <div class="row">
           INSTRUCTION WORKSPACE
           <div id="instruction_list"></div>
-          <%= render "containers/form" %>
           <%= render "instructions/form" %>
           <%= render "instructions/distribute_form" %>
           <%= render "instructions/transfer_form" %>
@@ -39,3 +36,4 @@
   </div>
 </div>
 <%= render "runs/submit" %>
+<%= render "containers/form" %>
