@@ -6,4 +6,5 @@ $(document).ready(function() {
   new Transcriptic.ContainerFormWidget();
   new Transcriptic.InstructionFormWidget();
   new Transcriptic.SubmitFormWidget();
+  TestData.bindEventListeners();
 });
