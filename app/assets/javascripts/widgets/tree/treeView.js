@@ -7,7 +7,7 @@ Transcriptic.Tree.TreeView.prototype = {
     this.$container.on("click", "li", this.handleParentNodeClick);
     this.controller = controller;
   },
-  renderTree: function(treeData) {
+  renderTree: function(treeData, sortable) {
     this.$container.empty();
     var $tree = $("<ul class='tree'></ul>");
 
@@ -16,6 +16,10 @@ Transcriptic.Tree.TreeView.prototype = {
     }
     
     this.$container.append($tree);
+
+    if(sortable) {
+      $tree.sortable();
+    }
   },
   render: function(nodeData, $parent) {
     var $listElem = $("<li>" + nodeData.text + "</li>");

@@ -4,7 +4,7 @@ Transcriptic.Tree.TreeController = function(treeContainerSelector) {
 };
 
 Transcriptic.Tree.TreeController.prototype = {
-  renderTree: function(treeData) {
-    this.treeView.renderTree(treeData);
+  renderTree: function(treeData, sortable) {
+    this.treeView.renderTree(treeData, sortable);
   }
 };

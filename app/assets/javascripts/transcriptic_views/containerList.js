@@ -8,6 +8,6 @@ Transcriptic.ContainerList.prototype = {
     for(var c in Transcriptic.organization.containers) {
       var container = Transcriptic.organization.containers[c];
       this.$containerList.append("<p>" + container.containerName + "</p>");
-    }
+    };
   }
 };

@@ -8,7 +8,7 @@ Transcriptic.ContainerList.ContainerListController = function(containerList) {
 Transcriptic.ContainerList.ContainerListController.prototype = {
   refreshList: function() {
     var listData = Transcriptic.ContainerList.ContainerParser.parse(Transcriptic.organization.containers, this);
-    this.containerList.renderTree(listData);
+    this.containerList.renderTree(listData, true);
   },
   handleNewContainerClick: function(evt) {
     this.containerForm.show();
