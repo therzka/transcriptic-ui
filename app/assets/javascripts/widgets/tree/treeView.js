@@ -4,13 +4,14 @@ Transcriptic.Tree.TreeView = function(treeContainerSelector) {
 
 Transcriptic.Tree.TreeView.prototype = {
   bindEventListeners: function(controller) {
+    this.$container.on("click", "li", this.handleParentNodeClick);
     this.controller = controller;
   },
   renderTree: function(treeData) {
     this.$container.empty();
-    var $tree = $("<ul></ul>")
+    var $tree = $("<ul class='tree'></ul>");
 
-    this.render(treeData, $tree)
+    this.render(treeData, $tree);
     this.$container.append($tree);
   },
   render: function(nodeData, $parent) {
@@ -19,12 +20,24 @@ Transcriptic.Tree.TreeView.prototype = {
 
     if(nodeData.nodes != null) {
       var $subTree = $("<ul></ul>");
+      $listElem.addClass("collapsed");
+      $subTree.hide();
       $listElem.append($subTree);
 
       for(var i in nodeData.nodes) {
         var node = nodeData.nodes[i];
         this.render(node, $subTree);      
       }
+    }
+  },
+  handleParentNodeClick: function(evt) {
+    evt.stopPropagation();
+    var $listElem = $(evt.currentTarget);
+    var $subTree = $listElem.find("> ul").toggle();
+
+    if($subTree.length > 0) {
+      $listElem.toggleClass("collapsed");
+      $listElem.toggleClass("expanded");
     }
   }
 };
