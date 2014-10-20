@@ -4,7 +4,7 @@ Transcriptic.Tree.TreeView = function(treeContainerSelector) {
 
 Transcriptic.Tree.TreeView.prototype = {
   bindEventListeners: function(controller) {
-    this.$container.on("click", "li", this.handleParentNodeClick);
+    this.$container.on("click", ".expander", this.handleParentNodeClick);
     this.controller = controller;
   },
   renderTree: function(treeData, sortable) {
@@ -22,13 +22,24 @@ Transcriptic.Tree.TreeView.prototype = {
     }
   },
   render: function(nodeData, $parent) {
-    var $listElem = $("<li>" + nodeData.text + "</li>");
+    var $listElem = $("<li></li>");
     $parent.append($listElem);
 
-    this.addDataToNode($listElem, nodeData.data);
+    var $text = this.addTextToNode($listElem, nodeData.text);
+    this.addDataToNode($text, nodeData.data);
     this.addSubtree($listElem, nodeData.nodes);
-    this.addCallback($listElem, nodeData.callback);
-    this.addClass($listElem, nodeData.cssClass);
+    this.addCallback($text, nodeData.callback);
+    this.addClass($text, nodeData.cssClass);
+  },
+  addExpander: function($node) {
+    var $expander = "<i class='expander fa fa-plus'></i>";
+    $node.prepend($expander);
+  },
+  addTextToNode: function($node, text) {
+    var $nodeText = $("<span>" + text + "</span>");
+    $node.append($nodeText);
+
+    return $nodeText;
   },
   addDataToNode: function($node, dataList) {
     for(var data in dataList) {
@@ -38,6 +49,7 @@ Transcriptic.Tree.TreeView.prototype = {
   addSubtree: function($node, children) {
     if(children) {
       var $subTree = $("<ul></ul>");
+      this.addExpander($node);
       $node.addClass("collapsed");
       $subTree.hide();
       $node.append($subTree);
@@ -58,12 +70,13 @@ Transcriptic.Tree.TreeView.prototype = {
   },
   handleParentNodeClick: function(evt) {
     evt.stopPropagation();
-    var $listElem = $(evt.currentTarget);
+    var $expander = $(evt.currentTarget);
+    var $listElem = $(evt.currentTarget.parentNode);
     var $subTree = $listElem.find("> ul").toggle();
 
     if($subTree.length > 0) {
-      $listElem.toggleClass("collapsed");
-      $listElem.toggleClass("expanded");
+      $expander.toggleClass("fa-plus");
+      $expander.toggleClass("fa-minus");
     }
   }
 };
