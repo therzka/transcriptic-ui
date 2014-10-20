@@ -13,7 +13,7 @@ Transcriptic.Instruction.Mix.prototype = {
 
   encodeAction: function() {
     var mixes = [];
-    mixes.push({well: this.well.reference(), volume: this.volume, speed: this.speed, repititions: this.repititions})
+    mixes.push({well: this.well.reference(), volume: this.volume.toString() + ":microliter", speed: this.speed, repititions: this.repititions})
     return {mix: mixes};
   }
 };
