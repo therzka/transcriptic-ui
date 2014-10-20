@@ -46,9 +46,13 @@ Transcriptic.Run.prototype = {
     var refs = {};
     var containers = [];
 
-    for (var ins in this.instructions) {
-      if (containers.indexOf(this.instructions[ins].container) === -1) {
-        containers.push(this.instructions[ins].container)
+    for (var i in this.instructions) {
+      var instructionContainers = this.instructions[i].getContainers();
+      for (var j in instructionContainers) {
+        var container = instructionContainers[j];
+        if (containers.indexOf(container) === -1) {
+          containers.push(container)
+        }
       }
     }
     for (var c in containers) {

@@ -1,5 +1,4 @@
 Transcriptic.Instruction.Consolidate = function(consolidateData) {
-  this.container = consolidateData.container;
   this.instructionType = "Pipette";
   this.from = consolidateData.from;
   this.to = consolidateData.to;
@@ -17,5 +16,8 @@ Transcriptic.Instruction.Consolidate.prototype = {
       fromWells.push({well: this.from[w].reference(), volume: this.from[w].volume.toString() + ":microliter"});
     }
     return {consolidate: {to: this.from.reference(), from: fromWells}};
+  },
+  getContainers: function() {
+    return [this.from.container, this.to.container];
   }
 };

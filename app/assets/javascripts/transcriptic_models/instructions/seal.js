@@ -5,5 +5,8 @@ Transcriptic.Instruction.Seal = function(sealData) {
 Transcriptic.Instruction.Seal.prototype = {
   encodeAction: function() {
     return {op: "seal", object: this.container.containerName};
+  },
+  getContainers: function() {
+    return [this.container];
   }
 };

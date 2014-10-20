@@ -1,5 +1,4 @@
 Transcriptic.Instruction.Transfer = function(transferData) {
-  this.container = transferData.container;
   this.instructionType = "Pipette";
   this.from = transferData.from;
   this.to = transferData.to;
@@ -12,5 +11,8 @@ Transcriptic.Instruction.Transfer.prototype = {
   },
   toString: function() {
     return this.instructionType + "(transfer) " + this.volume + "ul from " + this.from.reference() + " to " + this.to.reference();
+  },
+  getContainers: function() {
+    return [this.from.container, this.to.container];
   }
 };

@@ -7,5 +7,8 @@ Transcriptic.Instruction.Spin = function(spinData) {
 Transcriptic.Instruction.Spin.prototype = {
   encodeAction: function() {
     return {op: spin, object: this.container, speed: this.speed, duration: this.duration};
+  },
+  getContainers: function() {
+    return [this.container];
   }
 };
