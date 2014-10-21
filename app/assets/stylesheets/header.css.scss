@@ -4,7 +4,6 @@ $a-hover: #f59431;
 .navbar.navbar-default {
   border-radius: 0;
   border: 0;
-  background-color: rgba(0, 0, 0, 0.5);
 
   a {
     text-decoration: none;
@@ -17,7 +16,7 @@ $a-hover: #f59431;
     margin-top: 20px;
     width: 191px;
     height: 32px;
-    color: $header-back-color;
+    /*color: $header-back-color;*/
     &:hover {
       color: $a-hover;
     }

@@ -2,3 +2,16 @@
   overflow-x: hidden;
   overflow-y: scroll;
 }
+
+#submit_run_btn{
+	width: 200px;
+	height:40px;
+	margin-left: auto;
+	margin-right:auto;
+	background-color: #394755;
+	color: #FBAE17;
+
+	&:hover{
+		background-color: red;
+	}
+}
