@@ -2,3 +2,21 @@
   overflow-x: hidden;
   overflow-y: scroll;
 }
+
+#submit_run_btn{
+	font-size: 1.5em;
+	height:60px;
+	padding:4px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+	background-color: #394755;
+	color: #FBAE17;
+
+	&:hover{
+		background-color: #AF4442;
+		color: black;
+		border: 1px solid $transcripticnavy;
+	}
+
+}

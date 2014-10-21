@@ -4,20 +4,19 @@ $a-hover: #f59431;
 .navbar.navbar-default {
   border-radius: 0;
   border: 0;
-  background-color: rgba(0, 0, 0, 0.5);
 
   a {
     text-decoration: none;
   }
 
   .logo {
+    font-family: $font;
     font-style: italic;
-    text-transform: uppercase;
-    font-size: 1.8em;
+    font-weight: bolder;
+    font-size: 2.5em;
     margin-top: 20px;
     width: 191px;
     height: 32px;
-    color: $header-back-color;
     &:hover {
       color: $a-hover;
     }
@@ -27,9 +26,10 @@ $a-hover: #f59431;
     text-transform: uppercase;
     font-weight: 600;
     padding: 12px 15px;
+    float:right;
 
     a {
-      color: #bec3c9;
+      color: $transcripticnavy;
       &:hover {
         color: $a-hover;
       }

@@ -1,28 +1,43 @@
-$background: #4e5361;
-$text_and_outlines: #d9d2ce;
-$importanttext: #f78848;
-$workspace_back: #ecf0f1;
-$shadow: rgba(0, 0, 0, 0.5);
+@font-face {
+  font-family: 'Source Sans Pro';
+  src:font-url('SourceSansPro-Regular.ttf');
+  font-style: bold;
+}
 
 body {
+  font-family: $font;
   background-color: $background;
-  background-image: url('background.png');
+  .btn {
+      color: #fff;
+      background-color: $transcripticnavy;
+      border-radius: 1px;
+      border: 1px solid $transcripticnavy;
+      &:hover {
+        background-color: transparentize($transcripticnavy, 0.5);
+      }
+    }
+  a{
+    color: $transcripticnavy;
+  }
 }
+
 
 .workspace {
   padding: 10px;
   margin: 5px;
   background-color: $workspace_back;
-  border-radius: 4px;
+  font-size: 22px;
   -moz-box-shadow:    inset 0 0 2px $shadow;
   -webkit-box-shadow: inset 0 0 2px $shadow;
   box-shadow:         inset 0 0 2px $shadow;
 }
 
 #new_instruction_btn, #submit_run_btn {
-  margin: 5px;
+  margin-right: auto;
+  margin-left: auto;
   width: 99%;
 }
+
 
 .noselect {
   -webkit-touch-callout: none;
@@ -31,4 +46,11 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.panel-default{
+  background-color: #F5F7F8;
+}
+.panel-body {
+  background-color: white;
 }
