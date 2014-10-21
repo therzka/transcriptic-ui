@@ -1,3 +1,4 @@
+<div id="login">
 <h2>Log in</h2>
 
 <%= bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -6,10 +7,11 @@
   <%= f.password_field :password, autocomplete: "off" %>
 
   <% if devise_mapping.rememberable? -%>
-  <%= f.check_box :remember_me %> <%= f.label :remember_me %>
+  <%= f.check_box :remember_me %>
   <% end -%>
 
   <%= f.submit "Log in" %>
 <% end %>
 
 <%= render "devise/shared/links" %>
+</div>
