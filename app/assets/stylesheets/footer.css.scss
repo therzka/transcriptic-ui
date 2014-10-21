@@ -1,25 +1,41 @@
-footer {
-	position:absolute; 
+footer{
+	position:fixed; 
+	padding: 1em;
 	bottom:0;
 	width: 100%;
-	margin-top: 1em;
-	padding: 1em;
 	background-color: $transcripticnavy;
-	text-align: center;
+}
 
-	img {
-		width: 170px;
-		height: 32px;
-		padding-left: 3px;
-		margin-bottom: 3px;
-	}
-	a {
+#footercontent {
+	text-align: center;
+	a{
 		color: white;
-	  	text-decoration: none;
-		font-size: 1.7em;
+  		text-decoration: none;
 		&:hover{
 			text-decoration: none;
 			color: $transcripticorange;
 		}
+	}
+
+	#logolink {
+		p{
+			margin: 0;
+			padding-left: 2em;
+			display: inline-block;
+			font-size: 1.8em;
+		}
+		img {
+			width: 170px;
+			height: 32px;
+			padding-left: 3px;
+			margin-bottom: 3px;
+		}
+	}
+		
+	.info{
+		font-size: 16px;
+		display: inline-block;
+		font-style: light;
+		padding-right: 2em;
 	}
 }

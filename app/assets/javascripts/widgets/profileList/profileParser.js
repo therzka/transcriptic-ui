@@ -29,7 +29,7 @@ Transcriptic.ProfileList.ProfileParser = {
 
     projectData.push({
       text: "New Project",
-      cssClass: "btn",
+      cssClass: "btn btn-sm",
       callback: controller.handleNewProjectClick.bind(controller),
       data: { organization: organization }
     });
@@ -50,7 +50,7 @@ Transcriptic.ProfileList.ProfileParser = {
 
     runData.push({
       text: "New Run",
-      cssClass: "btn",
+      cssClass: "btn btn-sm",
       data: { project: project },
       callback: controller.handleNewRunClick.bind(controller),
     });
