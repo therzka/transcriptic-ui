@@ -10,5 +10,8 @@ Transcriptic.Instruction.Spin.prototype = {
   },
   getContainers: function() {
     return [this.container];
+  },
+  isValid: function() {
+    return this.container && this.speed && this.duration;
   }
 };

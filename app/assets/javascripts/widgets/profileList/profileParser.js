@@ -51,13 +51,15 @@ Transcriptic.ProfileList.ProfileParser = {
     runData.push({
       text: "New Run",
       cssClass: "btn",
+      data: { project: project },
       callback: controller.handleNewRunClick.bind(controller),
-      data: { project: project }
     });
 
     for(var i in runs) {
       runData.push({
-        text: runs[i].toString()
+        text: runs[i].toString(),
+        data: { project: project, run: runs[i] },
+        callback: controller.handleRunClick.bind(controller)
       });
     }
 

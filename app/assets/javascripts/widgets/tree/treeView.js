@@ -33,7 +33,7 @@ Transcriptic.Tree.TreeView.prototype = {
     this.addIcon($listElem, nodeData.icon);
   },
   addExpander: function($node) {
-    var $expander = this.addIcon($node, "fa fa-plus")
+    var $expander = this.addIcon($node, "fa fa-minus")
     $expander.addClass("expander");
   },
   addTextToNode: function($node, text) {
@@ -51,8 +51,8 @@ Transcriptic.Tree.TreeView.prototype = {
     if(children) {
       var $subTree = $("<ul></ul>");
       this.addExpander($node);
-      $node.addClass("collapsed");
-      $subTree.hide();
+      // $node.addClass("collapsed");
+      // $subTree.hide();
       $node.append($subTree);
 
       for(var i in children) {
@@ -89,5 +89,13 @@ Transcriptic.Tree.TreeView.prototype = {
       $expander.toggleClass("fa-plus");
       $expander.toggleClass("fa-minus");
     }
+  },
+  highlight: function($node) {
+    $node.parents("ul:last-child").find("li > span").removeClass("highlight");
+    $node.addClass("highlight")
+  },
+  getNodeWithData: function(key, data) {
+    var $nodes = this.$container.find("li > span");
+    return $nodes.filter(function() { return $.data(this, key) == data; });
   }
 };

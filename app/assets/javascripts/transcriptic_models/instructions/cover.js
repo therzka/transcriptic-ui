@@ -9,5 +9,8 @@ Transcriptic.Instruction.Cover.prototype = {
   },
   getContainers: function() {
     return [this.container];
+  },
+  isValid: function() {
+    return this.container && this.lid;
   }
 };
