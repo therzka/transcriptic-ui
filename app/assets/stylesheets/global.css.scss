@@ -1,14 +1,22 @@
-$background: #F7F8F9;
-$text_and_outlines: #394755;
-$importanttext: #f78848;
-$transcriptic: #FBAE17;
-/*$workspace_back: #ecf0f1;*/
-$workspace_back: white;
-$shadow: rgba(0, 0, 0, 0.5);
+@font-face {
+  font-family: 'Source Sans Pro';
+  src:font-url('SourceSansPro-Regular.ttf');
+  font-weight: normal;
+  font-style: bold;
+}
 
 body {
+  font-family: $font;
   background-color: $background;
+  .btn {
+    background-color: $transcripticnavy;
+    border: 1px solid $borders;
+  }
+  a{
+    color: $transcripticnavy;
+  }
 }
+
 
 .workspace {
   padding: 10px;

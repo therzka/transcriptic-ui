@@ -1,0 +1,22 @@
+footer {
+	width: 100%;
+	padding: 1em;
+	background-color: $transcripticnavy;
+	text-align: center;
+
+	img {
+		width: 170px;
+		height: 32px;
+		padding-left: 3px;
+		margin-bottom: 3px;
+	}
+	a {
+		color: white;
+	  	text-decoration: none;
+		font-size: 1.7em;
+		&:hover{
+			text-decoration: none;
+			color: $transcripticorange;
+		}
+	}
+}
