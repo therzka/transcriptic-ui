@@ -27,7 +27,7 @@ Transcriptic.ProfileList.ProfileListController.prototype = {
     var project = $run.data().project;
     var run = $run.data().run;
 
-    this.selectRun($run, run, project);
+    this.selectRun(run, project, $run);
   },
   selectRun: function(run, project, $runNode) {
     Transcriptic.organization.currentProject = project;
