@@ -13,8 +13,13 @@
         color: #f78848;
       }
     }
-    .span {
+    span {
       display: inline-block;
+      padding: 5px;
+      &.highlight {
+        color: #27ae60;
+        text-decoration: underline;
+      }
     }
     
   }

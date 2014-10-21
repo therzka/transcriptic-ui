@@ -14,6 +14,30 @@ Transcriptic.ProfileList.ProfileListController.prototype = {
   refreshList: function() {
     var listData = Transcriptic.ProfileList.ProfileParser.parse([Transcriptic.organization], this);
     this.profileList.renderTree(listData);
+
+    var currentRun = Transcriptic.organization.currentProject.currentRun;
+    var $currentRunNode = this.profileList.getNodeWithData("run", currentRun);
+    this.profileList.highlight($currentRunNode);
+  },
+  registerInstructionList: function(instructionList) {
+    this.instructionList = instructionList;
+  },
+  handleRunClick: function(evt) {
+    var $run = $(evt.currentTarget);
+    var project = $run.data().project;
+    var run = $run.data().run;
+
+    this.selectRun($run, run, project);
+  },
+  selectRun: function(run, project, $runNode) {
+    Transcriptic.organization.currentProject = project;
+    Transcriptic.organization.currentProject.currentRun = run;
+
+    this.profileList.highlight($runNode);
+
+    if(this.instructionList) {
+      this.instructionList.render(run);
+    }
   },
   handleNewRunClick: function(evt) {
     var project = $(evt.currentTarget).data().project;
