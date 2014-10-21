@@ -4,29 +4,25 @@
     list-style: none;
     padding-left: 1em;
     cursor: pointer;
-    &.collapsed {
-      &:before {
-        content: "\f067";
-        font-family: FontAwesome;
-        display: inline-block;
-        margin-left: -1em;
-        width: 1em;
+    i {
+      font-family: FontAwesome;
+      display: inline-block;
+      margin-left: -1em;
+      width: 1em;
+      &.expander:hover {
+        color: #f78848;
       }
     }
-    &.expanded {
-      &:before {
-        content: "\f068";
-        font-family: FontAwesome;
-        display: inline-block;
-        margin-left: -1em;
-        width: 1em;
-      }
+    .span {
+      display: inline-block;
     }
-
-    &.btn {
+    .btn {
       color: #fff;
       background-color: #428bca;
       border-radius: 4px;
+      &:hover {
+        background-color: #3071a9;
+      }
     }
   }
   ul {
