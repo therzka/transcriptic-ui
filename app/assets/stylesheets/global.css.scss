@@ -1,7 +1,6 @@
 @font-face {
   font-family: 'Source Sans Pro';
   src:font-url('SourceSansPro-Regular.ttf');
-  font-weight: normal;
   font-style: bold;
 }
 
@@ -9,9 +8,14 @@ body {
   font-family: $font;
   background-color: $background;
   .btn {
-    background-color: $transcripticnavy;
-    border: 1px solid $borders;
-  }
+      color: #fff;
+      background-color: $transcripticnavy;
+      border-radius: 1px;
+      border: 1px solid $transcripticnavy;
+      &:hover {
+        background-color: transparentize($transcripticnavy, 0.5);
+      }
+    }
   a{
     color: $transcripticnavy;
   }
@@ -22,16 +26,18 @@ body {
   padding: 10px;
   margin: 5px;
   background-color: $workspace_back;
-  /*border-radius: 4px;*/
+  font-size: 22px;
   -moz-box-shadow:    inset 0 0 2px $shadow;
   -webkit-box-shadow: inset 0 0 2px $shadow;
   box-shadow:         inset 0 0 2px $shadow;
 }
 
 #new_instruction_btn, #submit_run_btn {
-  margin: 5px;
+  margin-right: auto;
+  margin-left: auto;
   width: 99%;
 }
+
 
 .noselect {
   -webkit-touch-callout: none;
