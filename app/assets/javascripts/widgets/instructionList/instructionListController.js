@@ -6,5 +6,6 @@ Transcriptic.InstructionList.InstructionListController = function(instructionLis
 Transcriptic.InstructionList.InstructionListController.prototype = {
   render: function(run) {
     var instructionData = Transcriptic.InstructionList.InstructionParser.parse(run.instructions);
+    this.instructionList.render(instructionData);
   }
 };

@@ -10,6 +10,7 @@
         <div class="workspace" id="container_workspace">
           <div id="container_list"></div>
         </div>
+        <%= render "scrap/test_controls" %>
       </div>
     </div>
     <div class="col-md-9">
@@ -18,7 +19,7 @@
       </div>
       <div class="row">
         <div class="workspace" id="instruction_workspace">
-          <div class="panel-group" id="accordion" id="instruction_list">
+          <div class="panel-group" id="instruction_list">
           </div>
         </div>
       </div>
@@ -30,3 +31,5 @@
 <%= render "containers/form" %>
 <%= render "projects/form" %>
 <%= render "runs/form" %>
+
+<%= render "instructions/instruction_template" %>

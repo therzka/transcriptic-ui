@@ -34,7 +34,6 @@ Transcriptic.ProfileList.ProfileListController.prototype = {
     Transcriptic.organization.currentProject.currentRun = run;
 
     this.profileList.highlight($runNode);
-
     if(this.instructionList) {
       this.instructionList.render(run);
     }
