@@ -15,5 +15,8 @@ Transcriptic.Instruction.Thermocycle.prototype = {
   },
   getContainers: function() {
     return [this.container];
+  },
+  isValid: function() {
+    return this.container && this.steps && this.cycles && this.groups;
   }
 };

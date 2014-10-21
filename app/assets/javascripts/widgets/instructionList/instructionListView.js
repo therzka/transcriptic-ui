@@ -9,5 +9,6 @@ Transcriptic.InstructionList.InstructionListView.prototype = {
     for(var i in instructions) {
       this.$list.append(this.instructionTemplate(instructions[i]));
     }
+    this.$list.find(".collapse").last().collapse('toggle');
   }
 };

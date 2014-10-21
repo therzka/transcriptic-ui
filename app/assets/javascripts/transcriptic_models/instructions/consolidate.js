@@ -19,5 +19,8 @@ Transcriptic.Instruction.Consolidate.prototype = {
   },
   getContainers: function() {
     return [this.from.container, this.to.container];
+  },
+  isValid: function() {
+    return this.from && this.to && this.volume;
   }
 };

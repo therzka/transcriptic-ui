@@ -17,7 +17,12 @@ Transcriptic.Instruction.Distribute.prototype = {
     return {distribute: {from: this.from.reference(), to: toWells}};
   },
   toString: function() {
-    return this.instructionType + "(distribute) " + this.volume + "ul from " + this.from.reference() + " to " + this.to[0].reference();
+    if(this.isValid()) {
+      return this.instructionType + " (distribute) " + this.volume + "ul from " + this.from.reference() + " to " + this.to[0].reference();
+    }
+    else {
+      return this.instructionType + " (distribute)"
+    }
   },
   getContainers: function() {
     var toContainers = [];
@@ -26,5 +31,8 @@ Transcriptic.Instruction.Distribute.prototype = {
     }
     toContainers.push(this.from.container);
     return toContainers;
+  },
+  isValid: function() {
+    return this.from && this.to && this.volume;
   }
 };
