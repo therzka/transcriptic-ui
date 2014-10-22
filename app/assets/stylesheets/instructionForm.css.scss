@@ -5,3 +5,28 @@
 #transfer_instruction_form {
   display: none;
 }
+
+.modal-body {
+	#instruction_choices {
+		overflow-x: hidden;
+		overflow-y: scroll;
+		height: 200px;
+		margin-right: auto;
+		margin-left: auto;
+	}
+
+	form {
+		border-radius: 0 !important;
+	}
+
+	.instruction_type {
+		border-radius: 0 !important;
+		height: 100px;
+		width: 100px;
+		position: relative;
+		border: 1px solid $transcripticnavy;
+		margin: 2px;
+		
+	}
+	
+}
