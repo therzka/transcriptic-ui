@@ -1,6 +1,5 @@
-Transcriptic.InstructionEditor.SealForm = function($form, $saveBtn) {
+Transcriptic.InstructionEditor.SealForm = function($form) {
   this.$form = $form;
-  this.$saveBtn = $saveBtn;
 };
 
 Transcriptic.InstructionEditor.SealForm.prototype = {

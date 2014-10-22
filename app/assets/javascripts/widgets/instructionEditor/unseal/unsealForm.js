@@ -1,6 +1,5 @@
-Transcriptic.InstructionEditor.UnsealForm = function($form, $saveBtn) {
+Transcriptic.InstructionEditor.UnsealForm = function($form) {
   this.$form = $form;
-  this.$saveBtn = $saveBtn;
 };
 
 Transcriptic.InstructionEditor.UnsealForm.prototype = {
