@@ -21,6 +21,11 @@ body {
   }
 }
 
+.container {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
 .modal-dialog, .modal-content, .modal-header, .modal-body, .form-control, select, input {
     border-radius: 0 !important;
 }
