@@ -6,5 +6,8 @@ Transcriptic.InstructionEditor.Factory = {
     else if(instruction instanceof Transcriptic.Instruction.Seal) {
       return new Transcriptic.InstructionEditor.SealWidget(instruction, $instructionAccordion, $saveBtn);
     }
+    else if(instruction instanceof Transcriptic.Instruction.Unseal) {
+      return new Transcriptic.InstructionEditor.UnsealWidget(instruction, $instructionAccordion, $saveBtn);
+    }
   }
 }
