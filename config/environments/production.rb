@@ -75,5 +75,7 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
+
+  config.sass.load_paths << File.expand_path('../../vendor/assets/stylesheets/')
   config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
 end
