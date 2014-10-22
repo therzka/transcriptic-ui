@@ -3,6 +3,7 @@ Transcriptic.Instruction = {};
 Transcriptic.InstructionList = {};
 Transcriptic.InstructionForm = {};
 Transcriptic.InstructionEditor = {};
+Transcriptic.PlateGenerator = {};
 
 $(document).ready(function() {
   new Transcriptic.OrganizationInitializer();

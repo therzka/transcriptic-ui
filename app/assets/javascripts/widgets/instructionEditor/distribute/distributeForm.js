@@ -1,32 +1,56 @@
 Transcriptic.InstructionEditor.DistributeForm = function($form, $saveBtn) {
   this.$form = $form;
-  this.$saveBtn = $saveBtn;
-  this.$fromContainer = $form.find(".from .container_holder");
-  this.$toContainer = $form.find(".to .container_holder");
 };
 
 Transcriptic.InstructionEditor.DistributeForm.prototype = {
   render: function(instructionData) {
     var formTemplate = Handlebars.compile($("#distribute-form-template").html());
-    this.$form.append(formTemplate());
+    var distributeForm = formTemplate();
+    this.$form.append(distributeForm);
+    this.$fromContainer = this.$form.find(".from.container_holder");
+    this.$toContainer = this.$form.find(".to.container_holder");
   },
   bindEventListeners: function(controller) {
     this.controller = controller;
-    this.$saveBtn.on("click", this.handleSaveClick.bind(this));
+    this.$form.find(".volume").on("change", this.handlePlateUpdated.bind(this));
     this.$form.find(".container_holder").droppable({
       drop: this.handleContainerDrop.bind(this)
-    })
+    });
   },
   handleContainerDrop: function(evt, ui) {
     var container = $(ui.draggable[0]).find("> span").data().container;
     var $elem = $(evt.target);
-    this.setContainer($elem, container);
+    var cType = $elem.data().ctype;
+    if(cType === "from") {
+      this.setFromContainer($elem, container);
+    }
+    else if(cType === "to") {
+      this.setToContainer($elem, container);
+    }
   },
-  handleSaveClick: function(evt) {
-    var instructionData = {
-      // GRAB FROM FORM
-    };
-    this.controller.updateInstruction(instructionData);
+  updateInstruction: function(evt) {
+    if(this.fromPlate && this.toPlate) {
+      var instructionData = {
+        fromContainer: this.getFromContainer(),
+        toContainer: this.getToContainer(),
+        fromWells: this.fromPlate.getSelectedWells(),
+        toWells: this.toPlate.getSelectedWells(),
+        volume: parseInt(this.getVolume())
+      };
+      this.controller.updateInstruction(instructionData);
+    }
+  },
+  setFromContainer: function($elem, container) {
+    this.setContainer($elem, container);
+    var $fromPlate = this.$form.find(".from.plate");
+    this.fromPlate = Transcriptic.PlateGenerator.PlateWidget($fromPlate, container);
+    $fromPlate.on("update", this.handlePlateUpdated.bind(this));
+  },
+  setToContainer: function($elem, container) {
+    this.setContainer($elem, container);
+    var $toPlate = this.$form.find(".to.plate");
+    this.toPlate = Transcriptic.PlateGenerator.PlateWidget($toPlate, container, true);
+    $toPlate.on("update", this.handlePlateUpdated.bind(this));
   },
   setContainer: function($elem, container) {
     $elem.text(container.toString());
@@ -34,9 +58,15 @@ Transcriptic.InstructionEditor.DistributeForm.prototype = {
     $elem.data("container", container);
   },
   getFromContainer: function() {
-    this.$fromContainer.data("container");
+    return this.$fromContainer.data().container;
   },
   getToContainer: function() {
-    this.$toContainer.data("container");
+    return this.$toContainer.data().container;
+  },
+  getVolume: function() {
+    return this.$form.find(".volume").val();
+  },
+  handlePlateUpdated: function(evt) {
+    this.updateInstruction();
   }
 };

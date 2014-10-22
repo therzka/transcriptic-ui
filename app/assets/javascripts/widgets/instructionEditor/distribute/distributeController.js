@@ -11,6 +11,11 @@ Transcriptic.InstructionEditor.DistributeController.prototype = {
     this.distributeView.render(this.instruction);
   },
   updateInstruction: function(instructionData) {
-    // UPDATE INSTRUCTION WITH INSTRUCTION DATA
+    var fromWells = Transcriptic.PlateGenerator.PlateParser.parse(instructionData.fromContainer, instructionData.fromWells);
+    var toWells = Transcriptic.PlateGenerator.PlateParser.parse(instructionData.toContainer, instructionData.toWells);
+    
+    instructionData.from = fromWells[0];
+    instructionData.to = toWells;
+    this.instruction.update(instructionData);
   }
 };

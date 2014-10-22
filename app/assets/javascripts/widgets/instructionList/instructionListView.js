@@ -14,7 +14,8 @@ Transcriptic.InstructionList.InstructionListView.prototype = {
   },
   setSortable: function() {
     this.$list.sortable({
-      update: this.handleSortEvent.bind(this)
+      update: this.handleSortEvent.bind(this),
+      handle: ".panel-heading"
     });
   },
   handleSortEvent: function(evt) {

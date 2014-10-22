@@ -1,4 +1,4 @@
-Transcriptic.InstructionEditor.DistributeWidget = function(instruction, $instructionAccordion, $saveBtn) {
-  var distributeForm = new Transcriptic.InstructionEditor.DistributeForm($instructionAccordion, $saveBtn);
+Transcriptic.InstructionEditor.DistributeWidget = function(instruction, $instructionAccordion) {
+  var distributeForm = new Transcriptic.InstructionEditor.DistributeForm($instructionAccordion);
   return new Transcriptic.InstructionEditor.DistributeController(instruction, distributeForm);
 }
