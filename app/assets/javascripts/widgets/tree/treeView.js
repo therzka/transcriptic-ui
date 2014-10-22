@@ -18,7 +18,7 @@ Transcriptic.Tree.TreeView.prototype = {
     this.$container.append($tree);
 
     if(sortable) {
-      $tree.sortable();
+      $tree.sortable({items: "> li:not(:first)"});
     }
   },
   render: function(nodeData, $parent) {

@@ -19,5 +19,8 @@ Transcriptic.InstructionList.InstructionListView.prototype = {
   },
   handleSortEvent: function(evt) {
     
+  },
+  getInstructionAccordion: function(index) {
+    return this.$list.find(".instruction").eq(index);
   }
 };

@@ -1,11 +1,14 @@
 Transcriptic.Instruction.Distribute = function(distributeData) {
   this.instructionType = "Pipette";
-  this.from = distributeData.from;
-  this.to = distributeData.to;
-  this.volume = distributeData.volume;
+  this.update(distributeData);
 };
   
 Transcriptic.Instruction.Distribute.prototype = {
+  update: function(data) {
+    this.from = data.from || this.from;
+    this.to = data.to || this.to || [];
+    this.volume = data.volume || this.volume;
+  },
   addTo: function(well) {
     this.to.push(well);
   },

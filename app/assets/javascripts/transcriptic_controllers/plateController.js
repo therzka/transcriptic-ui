@@ -7,7 +7,7 @@ Transcriptic.PlateController = function(element, rowNumber, columnNumber, wellSi
 };
 
 Transcriptic.PlateController.prototype = {
-	 generatePlate: function(element, rowNumber, colNumber, wellSize){
+	generatePlate: function(element, rowNumber, colNumber, wellSize){
 		var numwells = colNumber * rowNumber
 		var platewidth = (1.6*(wellSize*colNumber))
 		var plateheight = (wellSize * rowNumber)
@@ -26,11 +26,11 @@ Transcriptic.PlateController.prototype = {
 	getSelectedWells: function(){
 		var selectedWells = [];
 
-  		$(".ui-selected").each(function(){
-  			selectedWells.push(parseInt($(this).attr("id")));
-  		})
+		$(".ui-selected").each(function(){
+			selectedWells.push(parseInt($(this).attr("id")));
+		})
 
-  		return selectedWells
-  	}
+		return selectedWells
+	}
 
 }

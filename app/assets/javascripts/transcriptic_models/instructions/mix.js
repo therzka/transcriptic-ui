@@ -1,16 +1,15 @@
 Transcriptic.Instruction.Mix = function(mixData) {
-  this.well = mixData.well;
   this.instructionType = "Pipette";
-  this.speed = mixData.speed;
-  this.volume = mixData.volume;
-  this.repetitions = mixData.repetitions;
+  this.update(mixData);
 };
   
 Transcriptic.Instruction.Mix.prototype = {
-  addTo: function(well) {
-    this.to.push(well);
+  update: function(data) {
+    this.well = data.well || this.well;
+    this.speed = data.speed || this.speed;
+    this.volume = data.volume || this.volume;
+    this.repetitions = data.repetitions || this.repetitions;
   },
-
   encodeAction: function() {
     var mixes = [];
     mixes.push({well: this.well.reference(), volume: this.volume.toString() + ":microliter", speed: this.speed, repititions: this.repititions})

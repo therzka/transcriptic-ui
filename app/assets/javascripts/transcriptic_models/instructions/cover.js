@@ -1,9 +1,12 @@
 Transcriptic.Instruction.Cover = function(coverData) {
-  this.container = coverData.container;
-  this.lid = coverData.lid || "standard";
+  this.update(coverdata);
 };
 
 Transcriptic.Instruction.Cover.prototype = {
+  update: function(data) {
+    this.container = data.container || this.container;
+    this.lid = data.lid || this.lid || "standard";
+  },
   encodeAction: function() {
     return {op: cover, object: this.container, lid: this.lid};
   },
@@ -12,5 +15,8 @@ Transcriptic.Instruction.Cover.prototype = {
   },
   isValid: function() {
     return this.container && this.lid;
+  },
+  toString: function() {
+    return "Cover " + (this.container ? this.container.toString() + " (" + this.lid + ")" : "");
   }
 };

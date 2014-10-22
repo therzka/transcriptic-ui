@@ -2,6 +2,7 @@ var Transcriptic = {};
 Transcriptic.Instruction = {};
 Transcriptic.InstructionList = {};
 Transcriptic.InstructionForm = {};
+Transcriptic.InstructionEditor = {};
 
 $(document).ready(function() {
   new Transcriptic.OrganizationInitializer();
