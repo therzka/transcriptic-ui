@@ -11,9 +11,15 @@ Transcriptic.PlateGenerator.PlateView.prototype = {
 
     var wellSize = 20;
     var numWells = width * height;
-    var plateWidth = (1.5*(wellSize*width));
-    var plateHeight = (wellSize * height);
-    this.$plate.css({"width": plateWidth + "px", "height": plateHeight + "px"});
+    var plateWidth = (2*(wellSize*width));
+    var plateHeight = (1.8*(wellSize * height));
+    if (numWells == 96){
+      var plateWidth = (1.5*(wellSize*width));
+    }
+    if (numWells == 384){
+      var plateWidth = (1.4*(wellSize*width));
+    }
+    this.$plate.css({"width": plateWidth + "px"});
     for(var j = 0; j < numWells; j++) {
       $holder.append('<li class="ui-state-default" id="' + j + '"></li>');
       $("#" + j).css({"width": wellSize, "height": wellSize});
