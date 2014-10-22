@@ -7,7 +7,7 @@ Transcriptic.Instruction.Uncover.prototype = {
     this.container = data.container || this.container;
   },
   encodeAction: function() {
-    return {op: uncover, object: this.container};
+    return {op: "uncover", object: this.container};
   },
   getContainers: function() {
     return [this.container];

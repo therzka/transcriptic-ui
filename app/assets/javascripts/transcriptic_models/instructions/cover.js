@@ -8,7 +8,7 @@ Transcriptic.Instruction.Cover.prototype = {
     this.lid = data.lid || this.lid || "standard";
   },
   encodeAction: function() {
-    return {op: cover, object: this.container, lid: this.lid};
+    return {op: "cover", object: this.container, lid: this.lid};
   },
   getContainers: function() {
     return [this.container];

@@ -14,7 +14,7 @@ Transcriptic.Instruction.Thermocycle.prototype = {
   	this.groups.push(thermogroupData);
   },
   encodeAction: function() {
-    return {op: thermocycle, object: this.container, groups: this.groups};
+    return {op: "thermocycle", object: this.container, groups: this.groups};
   },
   getContainers: function() {
     return [this.container];

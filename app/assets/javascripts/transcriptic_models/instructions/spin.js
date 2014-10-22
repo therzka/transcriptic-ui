@@ -9,7 +9,7 @@ Transcriptic.Instruction.Spin.prototype = {
     this.duration = data.duration || this.duration;
   },
   encodeAction: function() {
-    return {op: spin, object: this.container, speed: this.speed, duration: this.duration};
+    return {op: "spin", object: this.container, speed: this.speed, duration: this.duration};
   },
   getContainers: function() {
     return [this.container];

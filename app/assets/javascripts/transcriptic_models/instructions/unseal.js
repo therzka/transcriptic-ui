@@ -7,7 +7,7 @@ Transcriptic.Instruction.Unseal.prototype = {
     this.container = data.container || this.container;
   },
   encodeAction: function() {
-    return {op: unseal, object: this.container};
+    return {op: "unseal", object: this.container};
   },
   getContainers: function() {
     return [this.container];
