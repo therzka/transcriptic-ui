@@ -11,6 +11,7 @@ Transcriptic.ContainerList.ContainerParser = {
     for(var i in containers) {
       containerData.push({ 
         text: containers[i].toString(), 
+        data: {container: containers[i]},
         cssClass: "container_elem " + containers[i].storage
       });
     }

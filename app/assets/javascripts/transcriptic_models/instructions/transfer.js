@@ -1,11 +1,14 @@
 Transcriptic.Instruction.Transfer = function(transferData) {
   this.instructionType = "Pipette";
-  this.from = transferData.from;
-  this.to = transferData.to;
-  this.volume = transferData.volume;
+  this.update(transferData);
 };
 
 Transcriptic.Instruction.Transfer.prototype = {
+  update: function(data) {
+    this.from = data.from || this.from;
+    this.to = data.to || this.to;
+    this.volume = data.volume || this.volume;
+  },
   encodeAction: function() {
     return {transfer: [{from: this.from.reference(), to: this.to.reference(), volume: this.volume.toString() + ":microliter"}]};
   },

@@ -1,22 +1,16 @@
-#container_workspace {
-  height: 250px;
-  .tree {
-    .container_elem {
+.instruction_widget {
+  .container_holder {
       font-size: 18px;
-      display: block;
+      display: inline-block;
       color: #ecf0f1;
+      background-color: #bdc3c7;
       margin: 5px 0 5px;
       padding: 5px;
-      background-color: #d9d2ce;
       border-radius: 4px;
-      &:hover {
-        background-color: #bdc3c7;
-      }
       &.ambient { background-color: #e67e22; }
       &.warm_37 { background-color: #e74c3c; }
       &.cold_4 { background-color: #bdc3c7; }
       &.cold_20 { background-color: #3498db; }
       &.cold_80 { background-color: #34495e; }
     }
-  }
 }

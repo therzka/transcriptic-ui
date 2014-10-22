@@ -6,9 +6,12 @@ Transcriptic.API = {
 
 		// Transcriptic.API.postToTranscriptic(url, headers, protocol);
 
-		// LOG TO CONSOLE DURING TESTING
+		// LOG TO CONSOLE+MODAL DURING TESTING
+    var json = JSON.stringify(protocol, null, '\t')
 		console.log(url, headers);
-		console.log(JSON.stringify(protocol, null, '\t'));
+		console.log(json);
+    $("#successModal").modal("show");
+    $("#successModal").find(".json").val(json);
 	},
 	buildHeaders: function(organization) {
 		return {

@@ -1,8 +1,11 @@
 Transcriptic.Instruction.Seal = function(sealData) {
-  this.container = sealData.container;
+  this.update(sealData);
 };
 
 Transcriptic.Instruction.Seal.prototype = {
+  update: function(data) {
+    this.container = data.container || this.container;
+  },
   encodeAction: function() {
     return {op: "seal", object: this.container.containerName};
   },
@@ -11,5 +14,8 @@ Transcriptic.Instruction.Seal.prototype = {
   },
   isValid: function() {
     return this.container;
+  },
+  toString: function() {
+    return "Seal " + (this.container ? this.container.toString() : "");
   }
 };

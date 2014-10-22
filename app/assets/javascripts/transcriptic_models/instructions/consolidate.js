@@ -1,15 +1,17 @@
 Transcriptic.Instruction.Consolidate = function(consolidateData) {
   this.instructionType = "Pipette";
-  this.from = consolidateData.from;
-  this.to = consolidateData.to;
-  this.volume = consolidateData.volume;
+  this.update(consolidateData);
 };
   
 Transcriptic.Instruction.Consolidate.prototype = {
+  update: function(data) {
+    this.from = data.from || this.from;
+    this.to = data.to || this.to;
+    this.volume = data.volume || this.volume;
+  },
   addTo: function(well) {
     this.to.push(well);
   },
-
   encodeAction: function() {
     var fromWells = [];
     for (var w in this.from) {

@@ -1,5 +1,5 @@
 <script id="instruction-template" type="text/x-handlebars-template">
-  <div class="panel panel-default">
+  <div class="instruction panel panel-default">
     <div class="panel-heading">
       <h4 class="panel-title">
         <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{index}}">
@@ -9,8 +9,88 @@
     </div>
     <div id="collapse{{index}}" class="panel-collapse collapse">
       <div class="panel-body">
- 
+        <div class="instruction_widget">
+        </div>
       </div>
     </div>
   </div>
+</script>
+
+<script id="distribute-form-template" type="text/x-handlebars-template">
+  <span class="instruction_description">Aspirates sufficient volume from the source well, then dispenses into each target well the volume requested, in the order specified.</span>
+  <div class="row">
+      Volume: <%= text_field_tag :volume, "", class: "volume" %>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Source</h2>
+      <div data-ctype="from" class="from container_holder">Drop container here</div>
+      <div class="from plate"></div>
+    </div>
+    <div class="col-md-6">
+      <h2>Destination</h2>
+      <div data-ctype="to" class="to container_holder">Drop container here</div>
+      <div class="to plate"></div>
+    </div>
+  </div>
+</script>
+
+<script id="transfer-form-template" type="text/x-handlebars-template">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Source</h2>
+      <div class="from container_holder">Drop container here</div>
+      <div class="from_plate"></div>
+    </div>
+    <div class="col-md-6">
+      <h2>Destination</h2>
+      <div class="to container_holder">Drop container here</div>
+      <div class="to_plate"></div>
+    </div>
+  </div>
+</script>
+
+<script id="consolidate-form-template" type="text/x-handlebars-template">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Source</h2>
+      <div class="from container_holder">Drop container here</div>
+      <div class="from_plate"></div>
+    </div>
+    <div class="col-md-6">
+      <h2>Destination</h2>
+      <div class="to container_holder">Drop container here</div>
+      <div class="to_plate"></div>
+    </div>
+  </div>
+</script>
+
+<script id="seal-form-template" type="text/x-handlebars-template">
+  <h2>Container</h2>
+  <div class="container_holder">Drop container here</div>
+</script>
+
+<script id="unseal-form-template" type="text/x-handlebars-template">
+  <h2>Container</h2>
+  <div class="container_holder">Drop container here</div>
+</script>
+
+<script id="cover-form-template" type="text/x-handlebars-template">
+  <div class="container_holder">Drop container here</div>
+</script>
+
+<script id="uncover-form-template" type="text/x-handlebars-template">
+  <div class="container_holder">Drop container here</div>
+</script>
+
+<script id="mix-form-template" type="text/x-handlebars-template">
+  <div class="container_holder">Drop container here</div>
+</script>
+
+<script id="spin-form-template" type="text/x-handlebars-template">
+  <div class="container_holder">Drop container here</div>
+</script>
+
+<script id="thermocycle-form-template" type="text/x-handlebars-template">
+  <div class="container_holder">Drop container here</div>
 </script>
