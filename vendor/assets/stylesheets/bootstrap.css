@@ -2417,7 +2417,7 @@ input[type="month"].input-lg {
   line-height: 46px;
 }
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 4px;
 }
 .radio,
 .checkbox {
@@ -2481,8 +2481,8 @@ fieldset[disabled] .checkbox label {
   cursor: not-allowed;
 }
 .form-control-static {
-  padding-top: 7px;
-  padding-bottom: 7px;
+  padding-top: 4px;
+  padding-bottom: 4px;
   margin-bottom: 0;
 }
 .form-control-static.input-lg,

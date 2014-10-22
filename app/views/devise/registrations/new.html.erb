@@ -5,11 +5,12 @@
 <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 <%= devise_error_messages! %>
 
-<%= f.email_field :email, autofocus: true %>
-<%= f.text_field :lab_id %>
+<%= f.email_field :email, autofocus: true, label: "Email Address" %>
+<i>(preferrably the one you used to sign up on Transcriptic.com)</i>
+<%= f.text_field :lab_id, label: "Lab/Organization Name"%>
 
-<% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %>
 <%= f.password_field :password, autocomplete: "off" %>
+<% if @validatable %><i>(<%= @minimum_password_length %> characters minimum)</i><% end %>
 
 <%= f.password_field :password_confirmation, autocomplete: "off" %>
 

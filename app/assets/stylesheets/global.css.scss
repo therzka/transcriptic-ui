@@ -21,6 +21,11 @@ body {
   }
 }
 
+.container {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
 .modal-dialog, .modal-content, .modal-header, .modal-body, .form-control, select, input {
     border-radius: 0 !important;
 }
@@ -37,6 +42,7 @@ body {
 
 #new_instruction_btn, #submit_run_btn {
   margin-right: auto;
+  margin-bottom: 1em;
   margin-left: auto;
   width: 100%;
 }
