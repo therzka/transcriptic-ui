@@ -3,3 +3,7 @@ deployment:
     branch: master
     heroku:
       appname: transcriptify
+  staging:
+    branch: staging
+    heroku:
+      appname: transcriptify-staging
