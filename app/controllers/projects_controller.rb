@@ -1,8 +1,11 @@
 class ProjectsController < ApplicationController
-  before_filter :authenticate_user!
   
   def index
-    @projects = current_user.projects.all
+    @projects = if user_signed_in?
+      current_user.projects.all
+    else
+      []
+    end
   end
 
   def show
