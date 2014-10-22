@@ -19,6 +19,7 @@ Transcriptic.InstructionForm.InstructionFormView.prototype = {
     var instructionData = {
       instructionType:  $choice
     }
+
     this.handleFormSubmit(instructionData)
   },
 
