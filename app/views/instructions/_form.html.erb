@@ -3,12 +3,24 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="instructionModalLabel">New Instruction</h4>
+        <h4 class="modal-title" id="instructionModalLabel">Choose an instruction type below to add a step to your protocol.</h4>
       </div>
       <div class="modal-body">
-        <%= bootstrap_form_tag html: { id: "instruction_form" } do |f| %>
-          <%= f.select :instruction_type, ["distribute", "transfer"], {}, id: "instruction_type", label: "Type" %>
-        <% end %>
+        <div id="instruction_choices">
+          <button data-instruction="distribute" class="instruction_type">Distribute</button>
+          <button data-instruction="transfer" class="instruction_type">Transfer</button>
+          <button data-instruction="consolidate" class="instruction_type">Consolidate</button>
+          <button data-instruction="mix" class="instruction_type">Mix</button>
+          <button data-instruction="thermocycle" class="instruction_type">Thermocycle</button>
+          <button data-instruction="incubate" class="instruction_type">Incubate</button>
+          <button data-instruction="seal" class="instruction_type">Seal</button>
+          <button data-instruction="unseal" class="instruction_type">Unseal</button>
+          <button data-instruction="cover" class="instruction_type">Cover</button>
+          <button data-instruction="uncover" class="instruction_type">Uncover</button>
+          <button data-instruction="absorbance" class="instruction_type">Absorbance</button>
+          <button data-instruction="fluoresence" class="instruction_type">Fluoresence</button>
+          <button data-instruction="luminesence" class="instruction_type">Luminesence</button>
+        </div>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

@@ -21,6 +21,9 @@ body {
   }
 }
 
+.modal-dialog, .modal-content, .modal-header, .modal-body, .form-control, select, input {
+    border-radius: 0 !important;
+}
 
 .workspace {
   padding: 10px;
@@ -35,7 +38,7 @@ body {
 #new_instruction_btn, #submit_run_btn {
   margin-right: auto;
   margin-left: auto;
-  width: 99%;
+  width: 100%;
 }
 
 
