@@ -1,0 +1,22 @@
+<div class="modal fade" id="containerModal" tabindex="-1" role="dialog" aria-labelledby="containerModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="containerModalLabel">New Container</h4>
+      </div>
+      <div class="modal-body">
+        <%= bootstrap_form_tag html: { id: "container_form" } do |f| %>
+          <%= f.text_field :container_name, label: "Name" %>
+          <%= f.text_field :container_id, label: "ID" %>
+          <%= f.select :container_type, [["96 well V-bottom (PCR) plate", "96-pcr"], ["96 well flat-bottom optically clear plate", "96-flat"], ["96 well flat-bottom UV transparent plate", "96-flat-uv"], ["96 well flat-bottom extended capacity optically opaque plate", "96-deep"], ["384 well V-bottom (PCR) plate", "384-pcr"], ["384 well flat-bottom optically clear plate", "384-flat"]], {}, label: "Type", id: "container_type" %>
+          <%= f.select :storage, ["ambient", "warm_37", "cold_4", "cold_20", "cold_80"], {}, id: "storage" %>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn submit">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>

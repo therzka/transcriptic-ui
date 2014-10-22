@@ -1,0 +1,23 @@
+#login, #signup{
+	width: 40%;
+	margin-right: auto;
+	margin-left: auto;
+	h2{
+		text-align: center;
+	}
+	.checkbox{
+		float: right;
+	}
+	
+	input{
+		margin-bottom: 4px !important;
+
+		.btn{
+			margin-right: auto;
+			margin-left: auto;
+		}
+		&:hover{
+			box-shadow: none;
+		}
+	}
+}

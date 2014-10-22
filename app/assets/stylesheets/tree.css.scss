@@ -1,0 +1,31 @@
+.tree {
+  padding-left: .5em;
+  font-size: 18px;
+  li {
+    list-style: none;
+    margin-left: 1em;
+    cursor: pointer;
+    i {
+      font-family: FontAwesome;
+      display: inline-block;
+      margin-left: -1em;
+      width: 1em;
+      &.expander:hover {
+        color: #f78848;
+      }
+    }
+    span {
+      display: inline-block;
+      padding: 5px;
+      &.highlight {
+        color: #27ae60;
+        text-decoration: underline;
+      }
+    }
+    
+  }
+  ul {
+    padding-left: 0px;
+  }
+  
+}

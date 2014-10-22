@@ -1,0 +1,38 @@
+$header-back-color: #ecf0f1;
+$a-hover: #f59431;
+
+.navbar.navbar-default {
+  border-radius: 0;
+  border: 0;
+
+  a {
+    text-decoration: none;
+  }
+
+  .logo {
+    font-family: $font;
+    font-style: italic;
+    font-weight: bolder;
+    font-size: 2.5em;
+    margin-top: 20px;
+    width: 191px;
+    height: 32px;
+    &:hover {
+      color: $a-hover;
+    }
+  }
+
+  li {
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 12px 15px;
+    float:right;
+
+    a {
+      color: $transcripticnavy;
+      &:hover {
+        color: $a-hover;
+      }
+    }
+  }
+}

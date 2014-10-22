@@ -1,0 +1,9 @@
+<footer><div id="footercontent">
+
+<% if user_signed_in? %>
+<a class="pull-left" id="logolink" href="http://secure.transcriptic.com/">
+<p>View this run on  <%= image_tag("logo@2x.png", alt: "Transcriptic: The modern life science platform") %></p></a>
+<% end %>
+
+<div class="pull-right info"><%= link_to "What is this?" %><br> <%= link_to "Contact Us" %><br><%= link_to "Transcriptic Home" %></div></div>
+</footer>

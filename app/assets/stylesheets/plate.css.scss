@@ -1,0 +1,20 @@
+.plate {
+  .selectable li.ui-selecting { 
+    background: #FECA40; 
+  }
+  .selectable li.ui-selected { 
+    background: #F39814; 
+    color: white; 
+  }
+
+  li { 
+    border-radius: 50%;
+    margin: 3px; 
+    padding: 1px; 
+    float: left; 
+    width: 20px; 
+    height: 20px; 
+    list-style-type: none; 
+    background-color: grey;
+  }
+}
