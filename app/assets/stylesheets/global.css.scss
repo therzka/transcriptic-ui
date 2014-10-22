@@ -26,7 +26,6 @@ main.container {
 }
 
 .container {
-  overflow-x: hidden;
   overflow-y: scroll;
 }
 
@@ -34,15 +33,7 @@ main.container {
     border-radius: 0 !important;
 }
 
-.workspace {
-  padding: 10px;
-  margin: 5px;
-  background-color: $workspace_back;
-  font-size: 22px;
-  -moz-box-shadow:    inset 0 0 2px $shadow;
-  -webkit-box-shadow: inset 0 0 2px $shadow;
-  box-shadow:         inset 0 0 2px $shadow;
-}
+
 
 #new_instruction_btn, #submit_run_btn {
   margin-right: auto;

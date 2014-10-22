@@ -1,6 +1,18 @@
 .workspace {
-  overflow-x: hidden;
+  padding: 10px;
+  margin: 5px;
   overflow-y: scroll;
+  background-color: $workspace_back;
+  font-size: 22px;
+  -moz-box-shadow:    inset 0 0 2px $shadow;
+  -webkit-box-shadow: inset 0 0 2px $shadow;
+  box-shadow:         inset 0 0 2px $shadow;
+}
+
+.panel{
+  border-radius: 0 !important;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #submit_run_btn{
