@@ -23,12 +23,12 @@
       Enter volume to be distributed: <%= text_field_tag :volume, "", class: "volume" %>
   </div>
   <div class="row">
-    <div class="col-md-6">
+    <div id="source">
       <h2>Source</h2>
       <div data-ctype="from" class="from container_holder">Drop container here</div>
       <div class="from plate"></div>
     </div>
-    <div class="col-md-6">
+    <div id="destination">
       <h2>Destination</h2>
       <div data-ctype="to" class="to container_holder">Drop container here</div>
       <div class="to plate"></div>
@@ -53,12 +53,12 @@
 
 <script id="consolidate-form-template" type="text/x-handlebars-template">
   <div class="row">
-    <div class="col-md-6">
+    <div class="col-md-7">
       <h2>Source</h2>
       <div class="from container_holder">Drop container here</div>
       <div class="from_plate"></div>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-7">
       <h2>Destination</h2>
       <div class="to container_holder">Drop container here</div>
       <div class="to_plate"></div>
