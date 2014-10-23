@@ -1,5 +1,5 @@
 Transcriptic.Instruction.Transfer = function(transferData) {
-  this.instructionType = "Pipette";
+  this.instructionType = "pipette";
   this.update(transferData);
 };
 
@@ -10,7 +10,7 @@ Transcriptic.Instruction.Transfer.prototype = {
     this.volume = data.volume || this.volume;
   },
   encodeAction: function() {
-    return {transfer: [{from: this.from.reference(), to: this.to.reference(), volume: this.volume.toString() + ":microliter"}]};
+    return {transfer: [{from: this.from.reference(), to: this.to.reference(), volume: this.volume.toString() + ":microliters"}]};
   },
   toString: function() {
     if(this.isValid()) {

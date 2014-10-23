@@ -17,6 +17,6 @@ Transcriptic.Instruction.Cover.prototype = {
     return this.container && this.lid;
   },
   toString: function() {
-    return "Cover " + (this.container ? this.container.toString() + " (" + this.lid + ")" : "");
+    return "cover " + (this.container ? this.container.toString() + " (" + this.lid + ")" : "");
   }
 };

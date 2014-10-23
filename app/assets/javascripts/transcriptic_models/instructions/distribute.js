@@ -1,5 +1,5 @@
 Transcriptic.Instruction.Distribute = function(distributeData) {
-  this.instructionType = "Pipette";
+  this.instructionType = "pipette";
   this.update(distributeData);
 };
   
@@ -15,7 +15,7 @@ Transcriptic.Instruction.Distribute.prototype = {
   encodeAction: function() {
     var toWells = [];
     for (var w in this.to) {
-      toWells.push({well: this.to[w].reference(), volume: this.volume.toString() + ":microliter"});
+      toWells.push({well: this.to[w].reference(), volume: this.volume.toString() + ":microliters"});
     }
     return {distribute: {from: this.from.reference(), to: toWells}};
   },
