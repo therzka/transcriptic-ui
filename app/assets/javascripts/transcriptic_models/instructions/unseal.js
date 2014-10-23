@@ -16,6 +16,6 @@ Transcriptic.Instruction.Unseal.prototype = {
     return this.container;
   },
   toString: function() {
-    return "Unseal " + (this.container ? this.container.toString() : "");
+    return "unseal " + (this.container ? this.container.toString() : "");
   }
 };

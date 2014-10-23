@@ -16,6 +16,6 @@ Transcriptic.Instruction.Uncover.prototype = {
     return this.container;
   },
   toString: function() {
-    return "Uncover " + (this.container ? this.container.toString() : "");
+    return "uncover " + (this.container ? this.container.toString() : "");
   }
 };

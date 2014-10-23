@@ -16,6 +16,6 @@ Transcriptic.Instruction.Seal.prototype = {
     return this.container;
   },
   toString: function() {
-    return "Seal " + (this.container ? this.container.toString() : "");
+    return "seal " + (this.container ? this.container.toString() : "");
   }
 };
