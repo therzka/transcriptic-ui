@@ -2,6 +2,7 @@
   padding-left: .5em;
   font-size: 18px;
   li {
+    border-radius: 0 !important;
     list-style: none;
     margin-left: 1em;
     cursor: pointer;
@@ -26,6 +27,7 @@
   }
   ul {
     padding-left: 0px;
+    border-radius: 0 !important;
   }
   
 }

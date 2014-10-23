@@ -1,5 +1,5 @@
 Transcriptic.Instruction.Mix = function(mixData) {
-  this.instructionType = "Pipette";
+  this.instructionType = "pipette";
   this.update(mixData);
 };
   

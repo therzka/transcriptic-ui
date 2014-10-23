@@ -1,5 +1,5 @@
 Transcriptic.Instruction.Consolidate = function(consolidateData) {
-  this.instructionType = "Pipette";
+  this.instructionType = "pipette";
   this.update(consolidateData);
 };
   

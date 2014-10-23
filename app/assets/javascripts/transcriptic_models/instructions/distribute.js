@@ -1,5 +1,5 @@
 Transcriptic.Instruction.Distribute = function(distributeData) {
-  this.instructionType = "Pipette";
+  this.instructionType = "pipette";
   this.update(distributeData);
 };
   

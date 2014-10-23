@@ -1,5 +1,5 @@
 Transcriptic.Instruction.Transfer = function(transferData) {
-  this.instructionType = "Pipette";
+  this.instructionType = "pipette";
   this.update(transferData);
 };
 
