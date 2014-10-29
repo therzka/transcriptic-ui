@@ -49,16 +49,21 @@
       <div class="to_plate"></div>
     </div>
   </div>
-  <div class="row transfer_instruction">
+  <div class="row">
       <div class="col-md-4">Volume<br>
-       <%= text_field_tag :volume, "", class: "volume" %> <a href="#" class="copy-volume">copy ↓</a>
+       <a href="#" class="copy-volume">copy ↓</a>
       </div>
       <div class="col-md-4">From<br>
-      <%= text_field_tag :well, "", class:"from_well" %> <a href="#" class="copy-from">copy ↓</a>
+       <a href="#" class="copy-from">copy ↓</a>
       </div>
-      <div class="col-md-4">To<br>
-      <%= text_field_tag :well, "", class:"to_well" %>
-      <button id="add_transfer">+</button>
+      <div class="col-md-4">To<button id="add_transfer">+</button><br>
+      </div>
+  </div>
+  <div class="row transfer_instruction">
+    <div class="col-md-4"><%= text_field_tag :volume, "", class: "volume" %> </div>
+    <div class="col-md-4"><%= text_field_tag :well, "", class:"from well_field" %></div>
+    <div class="col-md-4">
+     <%= text_field_tag :well, "", class:"to well_field" %>
       </div>
   </div>
 </script>

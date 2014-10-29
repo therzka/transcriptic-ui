@@ -9,6 +9,8 @@ Transcriptic.InstructionEditor.TransferForm.prototype = {
     this.$form.append(transferForm);
     this.$fromContainer = this.$form.find(".from.container_holder");
     this.$toContainer = this.$form.find(".to.container_holder");
+    this.$add_button = this.$form.find("#add_transfer");
+    this.$instruction_row = this.$form.find(".transfer_instruction");
   },
   bindEventListeners: function(controller) {
     this.controller = controller;
@@ -16,6 +18,7 @@ Transcriptic.InstructionEditor.TransferForm.prototype = {
     this.$form.find(".container_holder").droppable({
       drop: this.handleContainerDrop.bind(this)
     });
+    this.$add_button.on("click", this.handleAddTransfer.bind(this));
   },
   handleContainerDrop: function(evt, ui) {
     var container = $(ui.draggable[0]).find("> span").data().container;
@@ -27,6 +30,13 @@ Transcriptic.InstructionEditor.TransferForm.prototype = {
     else if(cType === "to") {
       this.setToContainer($elem, container);
     }
+  },
+
+  handleAddTransfer: function(evt){
+    console.log(this.$instruction_row)
+    var new_row = this.$instruction_row.first().clone()
+
+    this.$instruction_row.parent().append(new_row);
   },
   updateInstruction: function(evt) {
     if(this.fromPlate && this.toPlate) {
