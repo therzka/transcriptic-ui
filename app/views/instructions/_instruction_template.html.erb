@@ -23,12 +23,12 @@
   </div>
   <div class="row">
     <div class="col-md-6">
-      <h2>Source</h2>
+      <h4>Source</h4>
       <div data-ctype="from" class="from container_holder">Drop container here</div>
       <div class="from plate"></div>
     </div>
     <div class="col-md-6">
-      <h2>Destination</h2>
+      <h4>Destination</h4>
       <div data-ctype="to" class="to container_holder">Drop container here</div>
       <div class="to plate"></div>
     </div>
@@ -38,27 +38,38 @@
 <script id="transfer-form-template" type="text/x-handlebars-template">
   <div class="row">
     <div class="col-md-6">
-      <h2>Source</h2>
-      <div class="from container_holder">Drop container here</div>
+      <h4>Source</h4>
+      <div data-ctype="from" class="from container_holder">Drop container here</div>
       <div class="from_plate"></div>
     </div>
     <div class="col-md-6">
-      <h2>Destination</h2>
-      <div class="to container_holder">Drop container here</div>
+      <h4>Destination</h4>
+      <div data-ctype="to" class="to container_holder">Drop container here</div>
       <div class="to_plate"></div>
     </div>
+  </div>
+  <div class="row transfer_instruction">
+      <div class="col-md-4">Volume
+       <%= text_field_tag :volume, "", class: "volume" %>
+      </div>
+      <div class="col-md-4">From
+      <%= text_field_tag :well, "", class:"from_well" %>
+      </div>
+      <div class="col-md-4">To<br>
+      <%= text_field_tag :well, "", class:"to_well" %>
+      </div>
   </div>
 </script>
 
 <script id="consolidate-form-template" type="text/x-handlebars-template">
   <div class="row">
     <div class="col-md-6">
-      <h2>Source</h2>
+      <h4>Source</h4>
       <div class="from container_holder">Drop container here</div>
       <div class="from_plate"></div>
     </div>
     <div class="col-md-6">
-      <h2>Destination</h2>
+      <h4>Destination</h4>
       <div class="to container_holder">Drop container here</div>
       <div class="to_plate"></div>
     </div>

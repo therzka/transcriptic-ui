@@ -9,5 +9,8 @@ Transcriptic.InstructionEditor.Factory = {
     else if(instruction instanceof Transcriptic.Instruction.Unseal) {
       return new Transcriptic.InstructionEditor.UnsealWidget(instruction, $instructionAccordion);
     }
+    else if(instruction instanceof Transcriptic.Instruction.Transfer){
+      return new Transcriptic.InstructionEditor.TransferWidget(instruction, $instructionAccordion);
+    }
   }
 }
