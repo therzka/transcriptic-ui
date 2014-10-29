@@ -11,17 +11,34 @@
   display: none;
 }
 
-#transfer-form-template {
-	.col-md-6{
-	  text-align: center;
+
+
+.panel-body {
+	text-align: center;
+	font-size: 1em;
+	span, row{
+		font-size: .8em;
+		padding-bottom: 1em;
 	}
-	.col-md-4{
+	.col-md-6{
 	  text-align: center;
 	  font-size: 1em;
 	}
+	.col-md-4{
+	  text-align: center;
+	  font-size: 16px;
+	}
 
-	.transfer_instruction{
+	.transfer_instruction { 
 		text-align: center;
-		margin: 1em auto 1em auto !important;
+		margin: 1em auto 0 auto !important;
+		a {
+			display: inline-block;
+			font-size: 12px;
+			
+		}
+		button{
+			margin-left: 1em;
+		}
 	}
 }

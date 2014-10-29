@@ -16,7 +16,7 @@
   </div>
 </script>
 
-<script id="distribute-form-template" type="text/x-handlebars-template">
+<script class="inst_template" id="distribute-form-template" type="text/x-handlebars-template">
   <span class="instruction_description">Aspirates sufficient volume from the source well, then dispenses into each target well the volume requested, in the order specified.</span>
   <div class="row">
       Volume: <%= text_field_tag :volume, "", class: "volume" %>
@@ -35,7 +35,8 @@
   </div>
 </script>
 
-<script id="transfer-form-template" type="text/x-handlebars-template">
+<script class="inst_template" id="transfer-form-template" type="text/x-handlebars-template">
+  <span class="instruction_description">For each element in the transfer list, in order, aspirates the specifed volume from the source well and dispenses the same volume into the target well</span>
   <div class="row">
     <div class="col-md-6">
       <h4>Source</h4>
@@ -49,14 +50,15 @@
     </div>
   </div>
   <div class="row transfer_instruction">
-      <div class="col-md-4">Volume
-       <%= text_field_tag :volume, "", class: "volume" %>
+      <div class="col-md-4">Volume<br>
+       <%= text_field_tag :volume, "", class: "volume" %> <a href="#" class="copy-volume">copy ↓</a>
       </div>
-      <div class="col-md-4">From
-      <%= text_field_tag :well, "", class:"from_well" %>
+      <div class="col-md-4">From<br>
+      <%= text_field_tag :well, "", class:"from_well" %> <a href="#" class="copy-from">copy ↓</a>
       </div>
       <div class="col-md-4">To<br>
       <%= text_field_tag :well, "", class:"to_well" %>
+      <button id="add_transfer">+</button>
       </div>
   </div>
 </script>
